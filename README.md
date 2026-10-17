@@ -11,6 +11,14 @@ I made these after wanting a stable cam for a motion sim and the ability to see 
 
 GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https://www.ko-fi.com/GrayHorizon), but you are under no obligation to do so.
 
+| | |
+|---|---|
+| ![FH4 in LEGO Valley](https://raw.githubusercontent.com/GrayHorizon-mod/Forza-Horizon-VR/main/media/fh4-lego-valley.jpg)<br>*FH4, LEGO Valley: the minimap and speedometer placed on the dash* | ![FH5 Hot Wheels race](https://raw.githubusercontent.com/GrayHorizon-mod/Forza-Horizon-VR/main/media/fh5-hot-wheels.jpg)<br>*FH5, Hot Wheels: laps, position, checkpoint and skill score up front, the minimap on the dash* |
+| ![FH6 in Tokyo](https://raw.githubusercontent.com/GrayHorizon-mod/Forza-Horizon-VR/main/media/fh6-tokyo.jpg)<br>*FH6, Tokyo: the minimap beside the wheel* | ![FH4 night race](https://raw.githubusercontent.com/GrayHorizon-mod/Forza-Horizon-VR/main/media/fh4-night-race.jpg)<br>*FH4, a night race: laps, times and position up front, the speedometer over the console* |
+| ![FH5 at the top of a Hot Wheels loop](https://raw.githubusercontent.com/GrayHorizon-mod/Forza-Horizon-VR/main/media/fh5-loop.jpg)<br>*FH5: the top of a Hot Wheels loop, the stable camera keeps the cockpit steady* | ![FH5 open-wheeler under the Hot Wheels track](https://raw.githubusercontent.com/GrayHorizon-mod/Forza-Horizon-VR/main/media/fh5-open-wheeler.jpg)<br>*FH5: an open-wheeler under the Hot Wheels track, the minimap on its nose* |
+
+*Screenshots taken with the mod's own screenshot key (F3): one eye's view, with the HUD elements where the headset shows them.*
+
 | Game | Tested game version | Settings file | Log |
 |---|---|---|---|
 | Forza Horizon 4 | 1.478.564.0 | `gh4vr.ini` | `gh4vr.log` |
@@ -127,6 +135,8 @@ The Pimax Crystal Super (Ultrawide and Micro-OLED modules) is recognised on the 
 ## GrayHorizon Settings
 
 `GrayHorizon Settings.exe` sits in the game folder and edits that game's ini for you. The mod opens it when the game starts (turn that off with "Open this window when the game starts", or `console=0`); you can also start it by hand at any time.
+
+![GrayHorizon Settings while FH5 runs: settings and hotkeys on the left, live performance and status on the right](https://raw.githubusercontent.com/GrayHorizon-mod/Forza-Horizon-VR/main/media/settings.png)
 
 - **Left side:** the headset these settings are for, resolution, per-eye mode, anti-aliasing / upscaling, DLSS render scale, foveated rendering, trim, HUD elements on / off, the Data Out port and where its packets are passed on to, and the other on/off options.
 - **Right side:** every hotkey, editable.
@@ -348,6 +358,7 @@ They work while the game window has focus, and every one can be changed in GrayH
 | Ctrl+Shift+F12 | `anti_aliasing` | Temporal anti-aliasing on / off |
 | Ctrl+Shift+PgUp / PgDn | `taa_sharper` / `taa_softer` | Sharpening +/- 0.1 |
 | Ctrl+Shift+F11 | `per_eye` | Per-eye rendering on / off (FH4 only) |
+| F3 | `screenshot` | Screenshot of what you see in the headset, HUD elements included (a JPEG in `Pictures\GrayHorizon`; the flat screen in menus) |
 | F4 | `frame_capture` | Capture for a problem report (large files in the game folder) |
 
 The everyday keys are plain function keys so they can be reached with a headset on. The Horizon games do not use the function keys themselves.
