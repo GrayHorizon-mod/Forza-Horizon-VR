@@ -97,7 +97,7 @@ If the game window on your monitor looks brighter or darker than the headset: Wi
 The same for every version of the games, in the game's own menus:
 
 1. **Video settings: V-Sync off**, **frame rate unlocked**, **motion blur off**, **TAA/FXAA off**, **DLSS/FSR/Frame gen/XeSS/CAS, etc. off**.  Any other video enhancement besides MSAA (FH4/FH5) is unsupported, and it usually does not help at all.  You must use the mod's own TAA or DLSS/FSR.
-2. **HDR off**: in FH6 under **Settings > Video > HDR**, or turn HDR off in Windows (**Settings > Display > Use HDR**, or Win+Alt+B). The mod works with the game's normal 8-bit picture. With HDR on, the Meta / Quest runtime can't take the picture and VR stays off for that run (the log says `runtime does not offer format 24`).
+2. **HDR off** (FH5 and FH6; FH4 has no HDR setting): **Settings > Video > HDR**, or turn HDR off in Windows (**Settings > Display > Use HDR**, or Win+Alt+B). The mod works with the game's normal 8-bit picture. With HDR on, the Meta / Quest runtime can't take the picture and VR stays off for that run (the log says `runtime does not offer format 24`).
 3. **Settings > HUD and gameplay:** leave the **HUD Safe Frame** sliders at their default position. The HUD elements in the cockpit are made for it; with other values they come out cut off or empty.
 4. **Settings > HUD and gameplay > Data Out: ON, IP address 127.0.0.1, port 20440.**  See [Data Out](#data-out-which-car-am-i-in) below if you're already using Data Out for SimHub, a motion rig or a dash.
 5. FH6 only: **Settings > HUD and gameplay > Radar position: Center right.** The radar element in the cockpit is made for that position.
