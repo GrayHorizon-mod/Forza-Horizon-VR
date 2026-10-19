@@ -25,6 +25,8 @@ GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https
 | Forza Horizon 5 | Steam 1.688.109.0, Game Pass / Microsoft Store 3.688.109.0 | `gh5vr.ini` | `gh5vr.log` |
 | Forza Horizon 6 | Steam 6.461.691.0, Game Pass / Microsoft Store 3.461.691.0 | `gh6vr.ini` | `gh6vr.log` |
 
+**FH4 progress in the Microsoft Store / Game Pass version?** The FH4 mod needs the Steam version, but your progress can come with you: the [GrayHorizon FH4 Save Converter](https://github.com/GrayHorizon-mod/FH4-Save-Converter) moves an FH4 profile from the Store version to Steam, or back. You need both versions, signed in with the same Xbox account.
+
 A game update can move the things the mod hooks. On a version it does not recognise, the mod says so in its log and stays out of the way; the game then runs as normal, without VR.  Work is ongoing so the mod will work automatically when an update is released, except for FH4 of course.
 
 ## What you get
@@ -76,6 +78,8 @@ To uninstall, delete the files above and the `gh4vr*` / `gh5vr*` / `gh6vr*` file
 ### Game Pass and Microsoft Store
 
 FH5 and FH6 from Game Pass or the Microsoft Store. (FH4 is no longer sold or on Game Pass, and its old Store version cannot be modded: use the Steam version.)
+
+Have FH4 progress in the Microsoft Store / Game Pass version? The [GrayHorizon FH4 Save Converter](https://github.com/GrayHorizon-mod/FH4-Save-Converter) moves your profile to the Steam version (or back), if you own both.
 
 1. **Find the game folder.** In the Xbox app, right-click the game, then **Manage > Files**. **Browse** opens the install folder; the game is in its **`Content`** folder, for example `C:\XboxGames\Forza Horizon 6\Content`, next to `ForzaHorizon5.exe` / `forzahorizon6.exe`. (Older installs show an **Enable advanced management features** button there: turn it on. If there is no such button, it is already on.)
 2. **Copy everything from the game's folder in the download into that `Content` folder:** `xinput1_3.dll`, `openxr_loader.dll`, `GrayHorizon Settings.exe` and `gh5vr.ini` / `gh6vr.ini`. Windows asks for administrator permission: allow it.
