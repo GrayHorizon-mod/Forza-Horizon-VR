@@ -97,7 +97,7 @@ If the game window on your monitor looks brighter or darker than the headset: Wi
 The same for every version of the games, in the game's own menus:
 
 1. **Video settings: V-Sync off**, **frame rate unlocked**, **motion blur off**, **TAA/FXAA off**, **DLSS/FSR/Frame gen/XeSS/CAS, etc. off**.  Any other video enhancement besides MSAA (FH4/FH5) is unsupported, and it usually does not help at all.  You must use the mod's own TAA or DLSS/FSR.
-2. **HDR off** (FH5 and FH6; FH4 has no HDR setting): **Settings > Video > HDR**, or turn HDR off in Windows (**Settings > Display > Use HDR**, or Win+Alt+B). The mod works with the game's normal 8-bit picture. With HDR on, the Meta / Quest runtime can't take the picture and VR stays off for that run (the log says `runtime does not offer format 24`).
+2. **HDR off** (FH5 and FH6; FH4 has no HDR setting): **Settings > Video > HDR**, or turn HDR off in Windows (**Settings > Display > Use HDR**, or Win+Alt+B). The mod works with the game's normal 8-bit picture. With HDR on, the Meta / Quest runtime can't take the picture and VR stays off for that run. The status window and the log say so and tell you to turn HDR off.
 3. **Settings > HUD and gameplay:** leave the **HUD Safe Frame** sliders at their default position. The HUD elements in the cockpit are made for it; with other values they come out cut off or empty.
 4. **Settings > HUD and gameplay > Data Out: ON, IP address 127.0.0.1, port 20440.**  See [Data Out](#data-out-which-car-am-i-in) below if you're already using Data Out for SimHub, a motion rig or a dash.
 5. FH6 only: **Settings > HUD and gameplay > Radar position: Center right.** The radar element in the cockpit is made for that position.
@@ -172,6 +172,7 @@ The Pimax Crystal Super (Ultrawide and Micro-OLED modules) is recognised on the 
 ![GrayHorizon Settings while FH5 runs: settings and hotkeys on the left, live performance and status on the right](https://raw.githubusercontent.com/GrayHorizon-mod/Forza-Horizon-VR/main/media/settings.png)
 
 - **Left side:** the headset these settings are for, resolution, per-eye mode, anti-aliasing / upscaling, DLSS render scale, foveated rendering, trim, HUD elements on / off, the Data Out port and where its packets are passed on to, and the other on/off options.
+- **VR** and **Start VR by itself:** untick **VR** and the game plays as normal on the monitor, for example when someone else plays: no VR, no hotkeys, no status window. At the next start the game's resolution goes back to the monitor's. Untick **Start VR by itself** and VR only comes on when you press the VR key (F8).
 - **Right side:** every hotkey, editable.
 - **While the game runs** it shows the live status: frame rate, GPU load, what each feature is doing.
 - **Performance summary** opens the statistics file from your last drive. **Use the suggested size** fills in the size the mod worked out.
@@ -442,6 +443,8 @@ Tested with SteamVR 2.18 and Pimax's SteamVR driver. Other headsets on SteamVR h
 
 | Key | Meaning |
 |---|---|
+| `vr` | `1` (default) = VR. `0` = the game plays as normal on the monitor and the mod does nothing (no VR, no hotkeys, no status window), e.g. when someone else plays. At the next start the game's resolution goes back to the monitor's if it is still the headset size; Data Out is still passed on. The **VR** box in GrayHorizon Settings. |
+| `auto_start` | `1` (default) = VR starts by itself. `0` = only when you press the VR key (F8). |
 | `plain_views` | `auto` (default) = on for SteamVR: each eye's picture is redrawn into the runtime's own view before it is handed over (see SteamVR). `1` = always, `0` = never. |
 | `srgb_swapchain` | `auto` (default) or `1` = the picture is handed to the headset marked as gamma-encoded (the sRGB form of the game's format), as the OpenXR standard expects. `0` = in the game's own format, as before 1.0.2. If the picture looks too bright and washed out, or too dark, in your headset, try the other value. |
 | `mirror` | Minimum mirror resolution (the games' menus cap it low; `0` = leave alone). |
@@ -465,7 +468,7 @@ Tested with SteamVR 2.18 and Pimax's SteamVR driver. Other headsets on SteamVR h
 Open an issue at <https://github.com/GrayHorizon-mod/Forza-Horizon-VR/issues>, with:
 
 1. **Try safe mode** (`safe_mode=1`, or the box in GrayHorizon Settings). If the problem is gone, turn the extras back on one at a time to find which causes it.
-2. **Attach the log** from the game folder (Game Pass: `Documents\GrayHorizon\FH5` / `FH6`), from a run where the problem happened. It is replaced at each launch; FH5 and FH6 keep the previous three as `...prev1.log` to `...prev3.log`. Its summary block (`==== summary`) lists your GPU, headset, OpenXR runtime and layers, and every setting.
+2. **Attach the log** from the game folder (Game Pass: `Documents\GrayHorizon\FH5` / `FH6`), from a run where the problem happened. It is replaced at each launch; FH5 and FH6 keep the previous three as `...prev1.log` to `...prev3.log`. Its summary block (`==== summary`) lists your GPU, headset, OpenXR runtime and layers, and every setting. If the game crashed, the end of the log has a short crash report saying where.
 3. **Say what you saw and when:** in the cockpit or a menu, one eye or both, after which hotkey.
 
 ## Known issues
