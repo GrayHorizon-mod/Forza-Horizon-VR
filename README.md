@@ -61,11 +61,12 @@ A game update can move the things the mod hooks. On a version it does not recogn
    - `gh4vr.ini` / `gh5vr.ini` / `gh6vr.ini` (the settings)
    - FH4 only: `nvngx_dlss.dll` for DLSS, and `amd_fidelityfx_loader_dx12.dll` and `amd_fidelityfx_upscaler_dx12.dll` for FSR. FH5 and FH6 have their own DLSS file.
 2. In the game's video settings: **V-Sync off**, **frame rate unlocked**, **motion blur off**, **TAA/FXAA off**, **DLSS/FSR/Frame gen/XeSS/CAS, etc. off**.  Any other video enhancement besides MSAA (FH4/FH5) is unsupported, and it usually does not help at all.  You must use the mod's own TAA or DLSS/FSR.
-3. In **Settings > HUD and gameplay**: leave the **HUD Safe Frame** sliders at their default position. The HUD elements in the cockpit are made for it; with other values they come out cut off or empty.
-4. In **Settings > HUD and gameplay > Data Out: ON, IP address 127.0.0.1, port 20440.**  See the Data section below if you're already using data out.
-5. FH6 only: **Settings > HUD and gameplay > Radar position: Center right.** The radar element in the cockpit is made for that position.
-6. Start the game with the headset connected and drive in **cockpit view**.
-7. Press **Ctrl+Space** to recenter. (The mod also recenters by itself the moment the headset first reports that you are wearing it.)
+3. **HDR off**: in FH6 under **Settings > Video > HDR**, or turn HDR off in Windows (**Settings > Display > Use HDR**, or Win+Alt+B). The mod works with the game's normal 8-bit picture. With HDR on, the Meta / Quest runtime can't take the picture and VR stays off for that run (the log says `runtime does not offer format 24`).
+4. In **Settings > HUD and gameplay**: leave the **HUD Safe Frame** sliders at their default position. The HUD elements in the cockpit are made for it; with other values they come out cut off or empty.
+5. In **Settings > HUD and gameplay > Data Out: ON, IP address 127.0.0.1, port 20440.**  See the Data section below if you're already using data out.
+6. FH6 only: **Settings > HUD and gameplay > Radar position: Center right.** The radar element in the cockpit is made for that position.
+7. Start the game with the headset connected and drive in **cockpit view**.
+8. Press **Ctrl+Space** to recenter. (The mod also recenters by itself the moment the headset first reports that you are wearing it.)
 
 You never need to edit the game's own settings file: the mod writes the render size it needs before the game reads it.
 
