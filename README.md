@@ -21,15 +21,16 @@ GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https
 
 | Game | Tested game version | Settings file | Log |
 |---|---|---|---|
-| Forza Horizon 4 | 1.478.564.0 | `gh4vr.ini` | `gh4vr.log` |
-| Forza Horizon 5 | 1.688.109.0 | `gh5vr.ini` | `gh5vr.log` |
-| Forza Horizon 6 | 6.461.691.0 | `gh6vr.ini` | `gh6vr.log` |
+| Forza Horizon 4 | Steam 1.478.564.0 | `gh4vr.ini` | `gh4vr.log` |
+| Forza Horizon 5 | Steam 1.688.109.0, Game Pass / Microsoft Store 3.688.109.0 | `gh5vr.ini` | `gh5vr.log` |
+| Forza Horizon 6 | Steam 6.461.691.0, Game Pass / Microsoft Store 3.461.691.0 | `gh6vr.ini` | `gh6vr.log` |
 
 A game update can move the things the mod hooks. On a version it does not recognise, the mod says so in its log and stays out of the way; the game then runs as normal, without VR.  Work is ongoing so the mod will work automatically when an update is released, except for FH4 of course.
 
 ## What you get
 
 - **Stereo 3D cockpit view** with head tracking and body lean. The two eyes are drawn as alternating game frames, so the game has to run at **twice your headset's refresh rate** (144 fps for 72 Hz).
+- **Eye timing warp.** Because the eyes are drawn on alternating frames, the left eye's picture is one frame older than the right one, and scenery passing the car at speed can look wrong in depth. The mod moves the left picture forward to the right eye's moment so both eyes match (see [Eye timing warp](#eye-timing-warp)).
 - **Stable cockpit camera.** Removes the game's simulated head bob, g-force lean and crash jolts. Your head, and a motion rig if you have one, provide that.
 - **Flat screen for menus, the map and pause**, in front of you in the headset.
 - **The HUD in the cockpit.** The game's HUD is taken apart into elements (map, speedometer, race info, pop-ups ...) that float where you put them, with a layout for each car.
@@ -47,7 +48,7 @@ A game update can move the things the mod hooks. On a version it does not recogn
 
 ## Requirements
 
-- One of the game versions in the table above, installed where you can put a DLL next to the game's `.exe`.  This will probably exclude most Microsoft Store purchases.  There is no requirement to have the game installed in any particular folder or be registered through Steam.
+- One of the game versions in the table above. FH5 and FH6 work from Steam and from Game Pass / the Microsoft Store (see [Game Pass and Microsoft Store](#game-pass-and-microsoft-store)); FH4 needs the Steam version.  There is no requirement to have the game installed in any particular folder.
 - A PC VR headset with an **OpenXR** runtime. Tested: Pimax OpenXR and SteamVR (see the SteamVR section). A Meta Quest 3S over Meta Link worked in a short test of an earlier version, from before canted mode. Others (WMR, Virtual Desktop ...) should work but have not been tried.
 - A strong CPU and GPU: the game must reach twice the headset's refresh rate.
 - For DLSS: an NVIDIA RTX card. On any other card FH4 uses AMD FSR instead; FH5 and FH6 render the full size with the mod's own anti-aliasing.
@@ -55,22 +56,53 @@ A game update can move the things the mod hooks. On a version it does not recogn
 
 ## Install
 
-1. Copy everything from the game's folder in the download into the game's own folder, next to `ForzaHorizon4.exe` / `ForzaHorizon5.exe` / `ForzaHorizon6.exe`:
+Follow the steps for your copy of the game: **[Steam](#steam)** or **[Game Pass / Microsoft Store](#game-pass-and-microsoft-store)** (FH5 and FH6). Both end with the same [settings in the game](#game-settings).
+
+### Steam
+
+1. **Copy everything from the game's folder in the download into the game's own folder**, next to `ForzaHorizon4.exe` / `ForzaHorizon5.exe` / `ForzaHorizon6.exe` (in Steam: right-click the game, **Manage > Browse local files**):
    - `xinput1_3.dll` (the mod) and `openxr_loader.dll`
    - `GrayHorizon Settings.exe`
    - `gh4vr.ini` / `gh5vr.ini` / `gh6vr.ini` (the settings)
    - FH4 only: `nvngx_dlss.dll` for DLSS, and `amd_fidelityfx_loader_dx12.dll` and `amd_fidelityfx_upscaler_dx12.dll` for FSR. FH5 and FH6 have their own DLSS file.
-2. In the game's video settings: **V-Sync off**, **frame rate unlocked**, **motion blur off**, **TAA/FXAA off**, **DLSS/FSR/Frame gen/XeSS/CAS, etc. off**.  Any other video enhancement besides MSAA (FH4/FH5) is unsupported, and it usually does not help at all.  You must use the mod's own TAA or DLSS/FSR.
-3. **HDR off**: in FH6 under **Settings > Video > HDR**, or turn HDR off in Windows (**Settings > Display > Use HDR**, or Win+Alt+B). The mod works with the game's normal 8-bit picture. With HDR on, the Meta / Quest runtime can't take the picture and VR stays off for that run (the log says `runtime does not offer format 24`).
-4. In **Settings > HUD and gameplay**: leave the **HUD Safe Frame** sliders at their default position. The HUD elements in the cockpit are made for it; with other values they come out cut off or empty.
-5. In **Settings > HUD and gameplay > Data Out: ON, IP address 127.0.0.1, port 20440.**  See the Data section below if you're already using data out.
-6. FH6 only: **Settings > HUD and gameplay > Radar position: Center right.** The radar element in the cockpit is made for that position.
-7. Start the game with the headset connected and drive in **cockpit view**.
-8. Press **Ctrl+Space** to recenter. (The mod also recenters by itself the moment the headset first reports that you are wearing it.)
+2. **Set up the game:** see [Game settings](#game-settings) below.
+3. **Start the game** with the headset connected and drive in **cockpit view**.
+4. Press **Ctrl+Space** to recenter. (The mod also recenters by itself the moment the headset first reports that you are wearing it.)
 
-You never need to edit the game's own settings file: the mod writes the render size it needs before the game reads it.
+The mod keeps its settings, log, HUD layout, seat positions and performance summary in the game folder (the `gh4vr*` / `gh5vr*` / `gh6vr*` files).
 
 To uninstall, delete the files above and the `gh4vr*` / `gh5vr*` / `gh6vr*` files the mod creates in the game folder.
+
+### Game Pass and Microsoft Store
+
+FH5 and FH6 from Game Pass or the Microsoft Store. (FH4 is no longer sold or on Game Pass, and its old Store version cannot be modded: use the Steam version.)
+
+1. **Find the game folder.** In the Xbox app, right-click the game, then **Manage > Files**. **Browse** opens the install folder; the game is in its **`Content`** folder, for example `C:\XboxGames\Forza Horizon 6\Content`, next to `ForzaHorizon5.exe` / `forzahorizon6.exe`. (Older installs show an **Enable advanced management features** button there: turn it on. If there is no such button, it is already on.)
+2. **Copy everything from the game's folder in the download into that `Content` folder:** `xinput1_3.dll`, `openxr_loader.dll`, `GrayHorizon Settings.exe` and `gh5vr.ini` / `gh6vr.ini`. Windows asks for administrator permission: allow it.
+3. **Rename `xinput1_3.dll` to `xinput1_4.dll`** in the `Content` folder. The Game Pass games load the mod under that name.
+4. **Set up the game:** see [Game settings](#game-settings) below. The Game Pass version has its own video and HUD settings, separate from a Steam copy, so set them here too.
+5. **Start the game** from the Xbox app with the headset connected and drive in **cockpit view**.
+6. Press **Ctrl+Space** to recenter. (The mod also recenters by itself the moment the headset first reports that you are wearing it.)
+
+**Where the settings go.** The game cannot write to its own folder, so the mod keeps its files in **`Documents\GrayHorizon\FH5`** or **`Documents\GrayHorizon\FH6`**: the ini (copied there from the `Content` folder on the first start), the log, the HUD layout, seat positions and the performance summary. Edit them there, or with GrayHorizon Settings, which opens with the game and uses that folder by itself. The ini in the `Content` folder is only the starting point.
+
+**Updates** work as for Steam: GrayHorizon Settings replaces `xinput1_4.dll` and asks for administrator rights.
+
+To uninstall, delete the files you copied into `Content` and the `Documents\GrayHorizon\FH5` / `FH6` folder.
+
+If the game window on your monitor looks brighter or darker than the headset: Windows may apply Auto HDR to Store games on an HDR monitor. That only changes the monitor, not the headset; it can be switched off in the Windows display settings.
+
+### Game settings
+
+The same for every version of the games, in the game's own menus:
+
+1. **Video settings: V-Sync off**, **frame rate unlocked**, **motion blur off**, **TAA/FXAA off**, **DLSS/FSR/Frame gen/XeSS/CAS, etc. off**.  Any other video enhancement besides MSAA (FH4/FH5) is unsupported, and it usually does not help at all.  You must use the mod's own TAA or DLSS/FSR.
+2. **HDR off**: in FH6 under **Settings > Video > HDR**, or turn HDR off in Windows (**Settings > Display > Use HDR**, or Win+Alt+B). The mod works with the game's normal 8-bit picture. With HDR on, the Meta / Quest runtime can't take the picture and VR stays off for that run (the log says `runtime does not offer format 24`).
+3. **Settings > HUD and gameplay:** leave the **HUD Safe Frame** sliders at their default position. The HUD elements in the cockpit are made for it; with other values they come out cut off or empty.
+4. **Settings > HUD and gameplay > Data Out: ON, IP address 127.0.0.1, port 20440.**  See [Data Out](#data-out-which-car-am-i-in) below if you're already using Data Out for SimHub, a motion rig or a dash.
+5. FH6 only: **Settings > HUD and gameplay > Radar position: Center right.** The radar element in the cockpit is made for that position.
+
+You never need to edit the game's own settings file: the mod writes the render size it needs before the game reads it.
 
 ### My settings
 
@@ -85,7 +117,7 @@ Here are my personal settings I have used after a lot of trial and error.  These
 
 A percentage that is not one of the presets goes into the ini as `upscale_scale`, for example `upscale_scale=0.85` in the headset's section (see [Settings per headset](#settings-per-headset)).
 
-**Game graphics settings.** Everything in step 2 above stays off in all three games.
+**Game graphics settings.** Everything in step 1 of [Game settings](#game-settings) stays off in all three games.
 
 **FH4:** every other setting at its maximum.
 
@@ -162,6 +194,7 @@ The mod also writes `gh4vr_stats.txt` / `gh5vr_stats.txt` / `gh6vr_stats.txt` ev
 - Turn MSAA off and use DLSS if possible.
 - Picture Trim: Saving here can be HUGE.  Trim the top/bottom to where you can still see the entire image in the headset.  This could reduce your CPU and GPU load by a significant amount.
 - Enable foveated rendering
+- Turn off the eye timing warp (`afr_warp=0`, the checkbox in GrayHorizon Settings, or Ctrl+Shift+F10 in game). It costs a little GPU time per frame; if you never notice the depth problem it fixes, you won't miss it.
 - Try lowering all graphics settings to a low preset, then slowly turn them up until the CPU or GPU is at its limit.  I recommend keeping the environment detail as high as possible to keep things from "popping in" as they get closer to you.
 - The performance summary does a good job of providing estimates for resolution size.  You can try using those, or if using DLSS, change the setting to a lower percentage.
 
@@ -174,7 +207,7 @@ When GrayHorizon Settings opens, it checks GrayHorizon's GitHub page for a newer
 - Every update is signed by GrayHorizon, and each file is checked against that signature before anything in the game folder changes. A download that does not match is thrown away and nothing changes.
 - If GrayHorizon Settings itself was updated, it restarts by itself.
 - If Windows does not allow changes in the game folder, it asks for administrator rights.
-- `gh?vr_update.log` in the game folder records every check and install.
+- `gh?vr_update.log` in the game folder (Game Pass: in `Documents\GrayHorizon\FH5` / `FH6`) records every check and install.
 - Turn the check off with "Look for GrayHorizon updates on GitHub when this window opens" (`update_check=0`). The mod never contacts the internet itself.
 
 The version you have is shown in GrayHorizon Settings' status line, and in the Details tab of `xinput1_3.dll`'s Properties in Explorer.
@@ -201,6 +234,18 @@ L67_R45_U57_D57=4504x5984
 The size is that of the **untrimmed** picture. The mod rounds it to multiples of 8.
 
 **How large?** Drive for a few minutes, then look at the performance summary. It gives a verdict and, when the GPU is the limit, a suggested size.
+
+## Eye timing warp
+
+The two eyes are drawn on alternating game frames, so the left eye's picture is one frame older than the right one it is shown with. In that frame the car moves on (about 40 cm at 200 km/h), and everything passing the car is in a slightly different place in each eye. Your eyes read that as depth: roadside objects can look nearer and smaller than they are, and the road beside the car can seem to rise toward the windows. Some people notice it straight away, others never do.
+
+The eye timing warp fixes it. Before each pair goes to the headset, every pixel of the left picture is moved to where it is one frame later, using the scene's depth: the scenery by the car's movement, other cars by their own, and your own car's cockpit by the car body's. Both eyes then show the same moment.
+
+- On by default (`afr_warp=1`). Switch it with **Ctrl+Shift+F10** in game, or the "Eye timing warp" checkbox in GrayHorizon Settings.
+- Needs an upscaler (DLSS, or FSR in FH4): it uses the depth the upscaler is given. Without one it does nothing.
+- Not used with SteamVR's plain views or with `half_rate=1`.
+- It costs a little GPU time per frame. If you are short of frame rate and don't notice the depth problem, turn it off.
+- Where something close (a window pillar, another car) uncovers scenery that was hidden a frame earlier, that spot is filled from the background next to it. At very high speed you may see a slight smear along such edges.
 
 ## Per-eye rendering
 
@@ -356,6 +401,7 @@ They work while the game window has focus, and every one can be changed in GrayH
 | F9 | `console` | Status window show / hide |
 | F10 | `foveated` | Foveated rendering: next level |
 | F12 | `stable_camera` | Stable camera on / off |
+| Ctrl+Shift+F10 | `afr_warp` | Eye timing warp on / off (see [Eye timing warp](#eye-timing-warp)) |
 | Ctrl+Shift+F12 | `anti_aliasing` | Temporal anti-aliasing on / off |
 | Ctrl+Shift+PgUp / PgDn | `taa_sharper` / `taa_softer` | Sharpening +/- 0.1 |
 | Ctrl+Shift+F11 | `per_eye` | Per-eye rendering on / off (FH4 only) |
@@ -397,6 +443,7 @@ Tested with SteamVR 2.18 and Pimax's SteamVR driver. Other headsets on SteamVR h
 | Key | Meaning |
 |---|---|
 | `plain_views` | `auto` (default) = on for SteamVR: each eye's picture is redrawn into the runtime's own view before it is handed over (see SteamVR). `1` = always, `0` = never. |
+| `srgb_swapchain` | `auto` (default) or `1` = the picture is handed to the headset marked as gamma-encoded (the sRGB form of the game's format), as the OpenXR standard expects. `0` = in the game's own format, as before 1.0.2. If the picture looks too bright and washed out, or too dark, in your headset, try the other value. |
 | `mirror` | Minimum mirror resolution (the games' menus cap it low; `0` = leave alone). |
 | `stable_camera` | `1` removes the game's simulated head motion. |
 | `foveated` | `0` off, `1` quality, `2` balanced, `3` performance. |
@@ -407,6 +454,7 @@ Tested with SteamVR 2.18 and Pimax's SteamVR driver. Other headsets on SteamVR h
 | `snow_fix` | FH4, canted per-eye mode: `1` (default) keeps snow and rain from being drawn as long sideways streaks (the game stretches each flake by the camera's movement since the last frame, which with alternating eyes was the other eye's direction). `2` = a simpler variant, `0` = off. Can be changed while the game runs. |
 | `ui_scene` | FH4: `1` (default) = 3D only while the game's driving screen is up; menus that keep the cockpit camera running behind them (car selection, blueprint menus, the map) are shown flat. `0` = the cockpit camera alone decides. FH5 and FH6 always work this way. |
 | `start_early` | FH5 / FH6: `1` = VR from the boot screens on, `0` = when the world has loaded. |
+| `afr_warp` | `1` (default): the eye timing warp, both eyes shown at the same moment (see [Eye timing warp](#eye-timing-warp)). `0` = off. |
 | `half_rate` | For slower PCs: `1` = a new image every other headset frame. Less smooth; a last resort. |
 | `console` | `1` opens GrayHorizon Settings with the live status when the game starts. |
 | `safe_mode` | `1` turns every extra off for one run, without changing your other settings. |
@@ -417,7 +465,7 @@ Tested with SteamVR 2.18 and Pimax's SteamVR driver. Other headsets on SteamVR h
 Open an issue at <https://github.com/GrayHorizon-mod/Forza-Horizon-VR/issues>, with:
 
 1. **Try safe mode** (`safe_mode=1`, or the box in GrayHorizon Settings). If the problem is gone, turn the extras back on one at a time to find which causes it.
-2. **Attach the log** from the game folder, from a run where the problem happened. It is replaced at each launch; FH5 and FH6 keep the previous three as `...prev1.log` to `...prev3.log`. Its summary block (`==== summary`) lists your GPU, headset, OpenXR runtime and layers, and every setting.
+2. **Attach the log** from the game folder (Game Pass: `Documents\GrayHorizon\FH5` / `FH6`), from a run where the problem happened. It is replaced at each launch; FH5 and FH6 keep the previous three as `...prev1.log` to `...prev3.log`. Its summary block (`==== summary`) lists your GPU, headset, OpenXR runtime and layers, and every setting.
 3. **Say what you saw and when:** in the cockpit or a menu, one eye or both, after which hotkey.
 
 ## Known issues
