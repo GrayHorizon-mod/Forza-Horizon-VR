@@ -15,8 +15,8 @@ The same for every version of the games. Set these in the game’s own menus.
 | Game | HUD Safe Frame Horizontal | HUD Safe Frame Vertical |
 |---|---|---|
 | Forza Horizon 4 | 8 | 37 |
-
-Forza Horizon 5 and Forza Horizon 6 use their own stock positions. Leave those sliders where the game shipped them. Do not copy the Horizon 4 numbers.
+| Forza Horizon 5 | 5 | 9 |
+| Forza Horizon 6 | 5 | 9 |
 
 - **Data Out**: ON, IP address `127.0.0.1`, port `20440`.  
   Required for per-car HUD layouts. The seat position usually still works without it. If Data Out already goes to SimHub or a rig, see [Data Out](HUD-AND-SEAT.md#data-out).
