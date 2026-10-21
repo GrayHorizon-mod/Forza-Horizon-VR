@@ -413,9 +413,21 @@ Up / down choose a row, left / right change it, Enter selects, Back goes back a 
 | Enter, A | `menu_enter` | Select |
 | Esc, B | `menu_back` | Back / close |
 
-`XInput` in a binding (`XInput:HatUp`, `XInput:B1`) means any Xbox-style pad, whatever Windows calls it. On a wheel, bind the menu button and Enter / Back to rim buttons and use its D-pad.
+`XInput` in a binding (`XInput:HatUp`, `XInput:B1`) means any Xbox-style pad, whatever Windows calls it. On a wheel, see [the menu on your wheel](#the-menu-on-your-wheel) below.
 
 **What the game sees:** only the menu button is always kept from the game. The other controls pass to the game as usual, except while the menu is on screen; then the game does not get them (keys, pad and wheel buttons alike), and a button pressed in the menu stays hidden until you let go of it. FH4 only reads a wheel's first 32 buttons; a higher one can still be a hotkey.
+
+### The menu on your wheel
+
+The menu is made for a wheel's D-pad (hat): you can open it, change the seat or the HUD, and close it again without taking your hands off the rim.
+
+1. Open GrayHorizon Settings. The **Menu in the headset** box at the top of the hotkeys is laid out like a D-pad: Up at the top, Left and Right at the sides, Enter in the middle, Down below.
+2. Click the **Open / close** box and press the rim button you want for the menu. The game never gets this button, so pick one you don't need in the game.
+3. Click **Up** and press up on the wheel's D-pad. Do the same for **Down**, **Left** and **Right**. The box then reads like `Up, FANATEC Wheel:HatUp`.
+4. Click **Enter** and **Back** and press a rim button for each. The buttons the game uses to confirm and go back are a natural fit: the game doesn't get them while the menu is open.
+5. Click **Save**. The game picks the change up the next time it starts.
+
+Pressing a button adds it to what is already in the box, so the keyboard key stays and both work. To take a button out, delete it from the box along with its comma. While the menu is closed, the D-pad and the Enter and Back buttons work in the game as usual.
 
 ## Hotkeys
 
