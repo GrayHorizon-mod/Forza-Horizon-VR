@@ -339,10 +339,8 @@ While Adjust HUD is open, the keyboard keys of the old calibration mode work too
 
 ### One layout per car
 
-Cars differ: a dash that hides the map in one car is empty space in the next. So a layout belongs to the car you made it in.
-
-- The first time you calibrate in a car, that car gets its own copy of **every** element's place, size, opacity, background and on / off. It keeps them from then on, whatever you change elsewhere.
-- Cars you have not calibrated use the **default** layout.
+- All HUDs can be moved so they look right, for example in a large truck you may want the race info up higher than in a small car.
+- The first time you edit the HUD layout in a car, that car gets its own copy of **the default** element's place, size, opacity, background and on / off.  Any changes made are automatically saved when exiting the menu.
 - **Save as the default for all cars** (in Adjust HUD) makes the layout on screen the default. Cars with their own layout are not touched.
 - The capture areas are the same for every car: they describe the game's HUD, not the car.
 
