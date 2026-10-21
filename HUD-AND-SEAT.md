@@ -9,7 +9,7 @@ The mod takes the game’s HUD apart into separate elements (minimap, speedomete
 - The Speedometer row (or the panels hotkey) hides/shows the speedometer for the current session.
 - `hud_panels=3` (or “HUD elements: Off” in GrayHorizon Settings) turns the whole system off and leaves the game’s flat HUD.
 
-Leave the game’s HUD Safe Frame sliders at default.  
+Leave the game’s HUD Safe Frame sliders at the stock position for that game. Forza Horizon 4 is Horizontal 8, Vertical 37. Forza Horizon 5 and 6 use their own stock positions; do not copy the Horizon 4 numbers.  
 FH6: set Radar position to Center right, or the radar element stays empty.
 
 FH4 has a `center` element for the large banners in the middle of the screen (“10 MINUTES REMAINING”, “CHECKPOINT MISSED”). Where two of FH4’s capture areas overlap, the smaller one keeps the shared part, so nothing is drawn twice.

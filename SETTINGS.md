@@ -10,7 +10,14 @@ The same for every version of the games. Set these in the game’s own menus.
 - **HDR off** (FH5 and FH6; FH4 has no HDR setting):  
   Settings → Video → HDR, or turn HDR off in Windows (Settings → Display → Use HDR, or Win+Alt+B).  
   With HDR on, the Meta/Quest runtime cannot take the picture and VR stays off for that run. The status window and log will say so.
-- **HUD and gameplay**: leave the HUD Safe Frame sliders at their default position. The cockpit HUD elements are made for it; other values make them cut off or empty.
+- **HUD and gameplay**: set the HUD Safe Frame sliders to the stock position for that game. The cockpit elements are made for it; any other value makes them come out cut off or empty.
+
+| Game | HUD Safe Frame Horizontal | HUD Safe Frame Vertical |
+|---|---|---|
+| Forza Horizon 4 | 8 | 37 |
+
+Forza Horizon 5 and Forza Horizon 6 use their own stock positions. Leave those sliders where the game shipped them. Do not copy the Horizon 4 numbers.
+
 - **Data Out**: ON, IP address `127.0.0.1`, port `20440`.  
   Required for per-car HUD layouts. The seat position usually still works without it. If Data Out already goes to SimHub or a rig, see [Data Out](HUD-AND-SEAT.md#data-out).
 - Keep Environment Geometry and Environment Texture high (Extreme if the system can handle it). Lowering them causes late pop-in of cones, barriers, and roadside objects.
