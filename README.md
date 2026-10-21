@@ -39,25 +39,27 @@ Full install steps, Game Pass notes, and the FH4 Save Converter are in [INSTALL.
 | Forza Horizon 5 | Steam 1.688.109.0 / Store 3.688.109.0 | Steam and Game Pass / Microsoft Store |
 | Forza Horizon 6 | Steam 6.461.691.0 / Store 3.461.691.0 | Steam and Game Pass / Microsoft Store |
 
+**FH4 progress in the Microsoft Store / Game Pass version?** The FH4 mod needs the Steam version, but your progress can come with you: the [GrayHorizon FH4 Save Converter](https://github.com/GrayHorizon-mod/FH4-Save-Converter) moves an FH4 profile from the Store version to Steam, or back. You need both versions, signed in with the same Xbox account.
+ 
 A game update can break the hooks. On an unrecognized version the mod stays out of the way and the game runs normally (no VR).
 
 ## What you get
 
 - Stereo 3D cockpit with head tracking (alternating frames — game must hit 2× headset refresh)
-- Stable cockpit camera (removes game head-bob / g-force lean)
+- Stable cockpit camera (removes game head-bob / g-force lean) - great for motion simulators
 - HUD broken into floating panels you can place per car (minimap, speedometer, race info, etc.)
 - Per-car seat position
 - Canted per-eye rendering, optional foveated rendering, picture trim
 - DLSS (NVIDIA) or the mod’s own TAA; FH4 also has FSR
 - In-headset menu (F12) and GrayHorizon Settings app
-- Motion compensation via OpenXR-MotionCompensation if you have it
+- Motion compensation via OpenXR is supported
 
 ## Requirements
 
 - One of the game versions above (own the game; this does not include any game files)
 - PC VR headset with an OpenXR runtime (tested mainly on Pimax OpenXR and SteamVR)
 - Strong enough CPU/GPU to run the game at 2× the headset refresh rate
-- NVIDIA RTX for DLSS (FH4 falls back to FSR on other cards)
+- NVIDIA RTX for DLSS (FH4 falls back to FSR on other cards). The mod's own TAA is available for all cards.
 
 Online play is at your own risk. The mods hook camera and rendering.
 
@@ -73,6 +75,3 @@ Issues: use the [Issues](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/iss
 Include game version, headset, runtime, and what you did right before it broke.
 
 Source is not public yet.
-
-**FH4 progress in the Microsoft Store / Game Pass version?** The FH4 mod needs the Steam version, but your progress can come with you: the [GrayHorizon FH4 Save Converter](https://github.com/GrayHorizon-mod/FH4-Save-Converter) moves an FH4 profile from the Store version to Steam, or back. You need both versions, signed in with the same Xbox account.
- 
