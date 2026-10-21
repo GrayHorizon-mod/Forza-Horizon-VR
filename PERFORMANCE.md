@@ -13,6 +13,8 @@ GrayHorizon Settings and the in-headset menu show a performance summary.
 
 The mod also writes `gh4vr_stats.txt` / `gh5vr_stats.txt` / `gh6vr_stats.txt` every 30 seconds of VR driving.
 
+**Environment detail:** Keep Environment Geometry / Environment Texture as high as you can (Extreme if possible). Lowering them makes cones, barriers, and other roadside objects pop in late, which is very noticeable in the headset. Drop other settings first.
+
 ## Quick ways to gain performance
 
 1. Turn the game’s MSAA off and use DLSS if you have an NVIDIA RTX card.  
