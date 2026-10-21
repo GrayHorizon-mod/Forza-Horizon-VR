@@ -45,12 +45,25 @@ Uninstall: delete the files you copied into Content and the `Documents\GrayHoriz
 
 **Note:** If the game window on your monitor looks brighter or darker than the headset, Windows may be applying Auto HDR to Store games. That only affects the monitor. Turn it off in Windows display settings if you want them to match.
 
+## The first start
+
+The mod can only measure a headset’s field of view while VR is running, so a headset it has never seen takes two starts:
+
+- **First start:** the picture is sized from what the headset itself recommends, capped so the start stays fast, with DLSS on and no trim. It works, but it is not yet as sharp or as fast as it will be.
+- **Second start:** the mod knows the field of view and uses the size for that headset. The log and GrayHorizon Settings say “restart to switch” after the first start.
+
+The Pimax Crystal Super (Ultrawide and Micro-OLED) is recognised on the first start and comes with a tuned size, render scale and trim. Pimax has shipped many field-of-view profiles, so those built-in lines may not match what your headset reports even if it is one of those modules.
+
 ## Updates
 
 GrayHorizon Settings checks the GitHub Releases page when it opens. If a newer version exists, an update button appears.  
 - The game must be closed.  
 - Only the mod’s files are replaced. Your `.ini` and HUD layout are left alone.  
-- Every update is signature-checked.  
+- Every update is signature-checked. A download that does not match is thrown away and nothing changes.  
+- If GrayHorizon Settings itself was updated, it restarts.  
+- `gh?vr_update.log` records every check and install (Game Pass: in `Documents\GrayHorizon\FH5` or `FH6`).  
+- Only GrayHorizon Settings contacts the internet, and only for this check. The mod itself does not.  
+- The version is shown in GrayHorizon Settings, and on the Details tab of the mod DLL in Explorer.  
 - You can turn the check off in Settings.
 
 ## Uninstall summary

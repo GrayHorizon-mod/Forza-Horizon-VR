@@ -23,9 +23,11 @@ GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https
    - Steam: right-click the game → Manage → Browse local files.
    - Game Pass / Microsoft Store (FH5 & FH6 only): Xbox app → Manage → Files → Content folder. Rename `xinput1_3.dll` to `xinput1_4.dll`.
 3. In the game: V-Sync off, frame rate unlocked, motion blur off, TAA/FXAA/DLSS/FSR/Frame Gen off, HDR off (FH5/FH6).
-4. Data Out on (127.0.0.1:20440) if you want per-car HUD layouts.
+4. Data Out on (127.0.0.1:20440) for per-car HUD layouts. Already using it for SimHub or a rig? See [Data Out](HUD-AND-SEAT.md#data-out).
 5. Launch with the headset connected and switch to cockpit view.
 6. Press `Ctrl+Space` to recenter (it also recenters automatically the first time the headset reports you’re wearing it).
+
+The first start with a headset the mod has never seen is a rough size. Restart once and it switches to the real one. See [The first start](INSTALL.md#the-first-start).
 
 Uninstall = delete the files you copied (and the `Documents\GrayHorizon` folder on Game Pass).
 
@@ -52,12 +54,13 @@ A game update can break the hooks. On an unrecognized version the mod stays out 
 - Canted per-eye rendering, optional foveated rendering, picture trim
 - DLSS (NVIDIA) or the mod’s own TAA; FH4 also has FSR
 - In-headset menu (F12) and GrayHorizon Settings app
+- VR on or off from GrayHorizon Settings, or F8, so the game can be played on the monitor
 - Motion compensation via OpenXR is supported
 
 ## Requirements
 
 - One of the game versions above (own the game; this does not include any game files)
-- PC VR headset with an OpenXR runtime (tested mainly on Pimax OpenXR and SteamVR)
+- A PC VR headset with an OpenXR runtime. Tested: Pimax OpenXR and SteamVR. A Quest 3S over Meta Link was only tried on a build from before canted mode. Other runtimes (WMR, Virtual Desktop) should work but have not been tried. If the picture looks stretched, see [SteamVR](TECHNICAL.md#steamvr).
 - Strong enough CPU/GPU to run the game at 2× the headset refresh rate
 - NVIDIA RTX for DLSS (FH4 falls back to FSR on other cards). The mod's own TAA is available for all cards.
 
@@ -69,9 +72,16 @@ Online play is at your own risk. The mods hook camera and rendering.
 - [Game settings & ini options](SETTINGS.md)
 - [HUD layouts, seat position, headset menu](HUD-AND-SEAT.md)
 - [Performance notes & suggested settings](PERFORMANCE.md)
-- [Technical details](TECHNICAL.md)
+- [Technical details, SteamVR and known issues](TECHNICAL.md)
 
-Issues: use the [Issues](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/issues) tab.  
-Include game version, headset, runtime, and what you did right before it broke.
+## Reporting a problem
+
+Open an [issue](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/issues) and:
+
+1. Try safe mode first (`safe_mode=1`, or the box in GrayHorizon Settings). If the problem is gone, turn the extras back on one at a time.
+2. Attach the log from a run where it happened. Steam: the game folder (`gh4vr.log` / `gh5vr.log` / `gh6vr.log`). Game Pass: `Documents\GrayHorizon\FH5` or `FH6`. The log is replaced at each launch. FH5 and FH6 keep the previous three as `...prev1.log` to `...prev3.log`. The `==== summary` block lists your GPU, headset, OpenXR runtime and the settings. If the game crashed, the end of the log says where.
+3. Say what you saw and when: in the cockpit or a menu, one eye or both, and which key or button you had just pressed.
+
+Include the game version, headset and runtime.
 
 Source is not public yet.
