@@ -417,7 +417,7 @@ Up / down choose a row, left / right change it, Enter selects, Back goes back a 
 
 **What the game sees:** only the menu button is always kept from the game. The other controls pass to the game as usual, except while the menu is on screen; then the game does not get them (keys, pad and wheel buttons alike), and a button pressed in the menu stays hidden until you let go of it. FH4 only reads a wheel's first 32 buttons; a higher one can still be a hotkey.
 
-### The menu on your wheel
+### Using the menu on your wheel or controller
 
 The menu is made for a wheel's D-pad (hat): you can open it, change the seat or the HUD, and close it again without taking your hands off the rim.
 
@@ -458,10 +458,10 @@ Write a key on its own or with `Ctrl`, `Shift` and/or `Alt` (`F1`-`F24`, `A`-`Z`
 
 Any hotkey can also be a button on a wheel rim, joystick or button box. In GrayHorizon Settings, click a hotkey box and press the button: it is added to the box as the controller's name and the button number, for example `FANATEC Wheel:B12`. A hat (D-pad) direction is written as `HatUp`, `HatRight`, `HatDown` or `HatLeft`. Keys and buttons can share an action: `screenshot=F3, FANATEC Wheel:B12`.
 
-- The game still sees a button you make a hotkey, so pick one the game does not use. A key the game must not see is better bound as a keyboard key, which the mod does keep from the game (a button box can usually send key combos). The [menu](#the-menu-in-the-headset)'s buttons are the exception: the game never gets the menu button, nor the others while the menu is on screen.
+- The game still sees a button you make a hotkey, so pick one the game does not use.  The [menu](#the-menu-in-the-headset)'s buttons are the exception: the game never gets the menu button, nor the others while the menu is on screen.
 - One button for two hotkeys: the first in the list wins, so give each button one job.
 - In the ini you can shorten the name to any part of it (`Fanatec:B12`). It is not case-sensitive.
-- Hold a seat or sharpening button and it repeats, like a key.
+- Seat buttons repeat automatically.
 - A controller plugged in after the game starts is found within 10 seconds.
 
 ## SteamVR
