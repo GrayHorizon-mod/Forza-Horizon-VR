@@ -411,7 +411,7 @@ Up / down choose a row, left / right change it, Enter selects, Back goes back a 
 | Enter, A | `menu_enter` | Select |
 | Esc, B | `menu_back` | Back / close |
 
-`XInput` in a binding (`XInput:HatUp`, `XInput:B1`) means any Xbox-style pad, whatever Windows calls it. On a wheel, see [the menu on your wheel](#the-menu-on-your-wheel) below.
+`XInput` in a binding (`XInput:HatUp`, `XInput:B1`) means any Xbox-style pad, whatever Windows calls it. On a wheel, see [using the menu on your wheel or controller](#using-the-menu-on-your-wheel-or-controller) below.
 
 **What the game sees:** only the menu button is always kept from the game. The other controls pass to the game as usual, except while the menu is on screen; then the game does not get them (keys, pad and wheel buttons alike), and a button pressed in the menu stays hidden until you let go of it. FH4 only reads a wheel's first 32 buttons; a higher one can still be a hotkey.
 
