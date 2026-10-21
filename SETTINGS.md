@@ -13,6 +13,7 @@ The same for every version of the games. Set these in the game’s own menus.
 - **HUD and gameplay**: leave the HUD Safe Frame sliders at their default position. The cockpit HUD elements are made for it; other values make them cut off or empty.
 - **Data Out**: ON, IP address `127.0.0.1`, port `20440`.  
   Required for per-car HUD layouts and seat positions. See [HUD-AND-SEAT.md](HUD-AND-SEAT.md).
+- Keep Environment Geometry and Environment Texture high (Extreme if the system can handle it). Lowering them causes late pop-in of cones, barriers, and roadside objects.
 - **FH6 only**: Settings → HUD and gameplay → Radar position: Center right. The radar element is made for that position.
 
 You never need to edit the game’s own settings file. The mod writes the render size it needs before the game reads it.
