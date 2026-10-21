@@ -3,12 +3,6 @@
 Not affiliated with Playground / Turn 10 / Xbox / Microsoft.  
 Use at your own risk.
 
-# GrayHorizon — VR for Forza Horizon 4, 5 and 6
-
-Unofficial free PCVR mods.  
-Not affiliated with Playground Games, Turn 10, Xbox, or Microsoft.  
-Use at your own risk.
-
 Three separate injectors (one per game) that share the same design and the same settings program.  
 Each gives a stereo 3D cockpit view with full head tracking through OpenXR.
 
