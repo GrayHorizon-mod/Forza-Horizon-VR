@@ -31,6 +31,3 @@ Controls the field of view the game uses for detail distances.
 
 In FH6 this is the difference between other cars looking correct vs dark and dithered.
 
----
-
-More sections (foveated rendering, motion compensation, known issues, etc.) can be added here from the original README as needed.
