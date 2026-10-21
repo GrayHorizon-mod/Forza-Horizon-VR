@@ -23,6 +23,8 @@ You never need to edit the game’s own settings file. The mod writes the render
 `GrayHorizon Settings.exe` is included in every zip.  
 It shows live status while the game is running, lets you change most options without editing the ini by hand, and checks for updates on GitHub.
 
+![GrayHorizon Settings window with live status](media/settings.png)
+
 Hotkeys (editable on the right side of the window):
 - F12 (or a wheel/pad button) — in-headset menu
 - F5 — frame-rate readout
