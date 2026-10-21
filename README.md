@@ -45,6 +45,7 @@ A game update can move the things the mod hooks. On a version it does not recogn
 - **Foveated rendering** (optional): coarser shading toward the edges of the view.
 - **Settings per headset**: size, render scale, trim and foveated level for each headset or lens module.
 - **Performance summary and verdict.** The mod measures frame rate and GPU load while you drive, says what is limiting, and suggests a size.
+- **A menu in the headset** (F12, or a button on your wheel or pad): recenter, seat position, speedometer, HUD layout, screenshot, flat view and the picture settings, each showing what it is set to. You drive it with the D-pad or arrow keys, and while it is open the game does not get those buttons.
 - **GrayHorizon Settings**, a small program for all of the above, with a live status view while the game runs.
 - **Motion compensation** works through OpenXR-MotionCompensation if you have it.
 
@@ -173,7 +174,7 @@ The Pimax Crystal Super (Ultrawide and Micro-OLED modules) is recognised on the 
 
 `GrayHorizon Settings.exe` sits in the game folder and edits that game's ini for you. The mod opens it when the game starts (turn that off with "Open this window when the game starts", or `console=0`); you can also start it by hand at any time.
 
-![GrayHorizon Settings while FH5 runs: settings and hotkeys on the left, live performance and status on the right](https://raw.githubusercontent.com/GrayHorizon-mod/Forza-Horizon-VR/main/media/settings.png)
+![GrayHorizon Settings while FH4 runs: settings on the left, the headset menu and hotkeys in the middle, live performance and status on the right](https://raw.githubusercontent.com/GrayHorizon-mod/Forza-Horizon-VR/main/media/settings.png)
 
 - **Left side:** the headset these settings are for, resolution, per-eye mode, anti-aliasing / upscaling, DLSS render scale, foveated rendering, trim, HUD elements on / off, the Data Out port and where its packets are passed on to, and the other on/off options.
 - **VR** and **Start VR by itself:** untick **VR** and the game plays as normal on the monitor, for example when someone else plays: no VR, no hotkeys, no status window. At the next start the game's resolution goes back to the monitor's. Untick **Start VR by itself** and VR only comes on when you press the VR key (F8).
@@ -199,7 +200,7 @@ The mod also writes `gh4vr_stats.txt` / `gh5vr_stats.txt` / `gh6vr_stats.txt` ev
 - Turn MSAA off and use DLSS if possible.
 - Picture Trim: Saving here can be HUGE.  Trim the top/bottom to where you can still see the entire image in the headset.  This could reduce your CPU and GPU load by a significant amount.
 - Enable foveated rendering
-- Turn off the eye timing warp (`afr_warp=0`, the checkbox in GrayHorizon Settings, or Ctrl+Shift+F10 in game). It costs a little GPU time per frame; if you never notice the depth problem it fixes, you won't miss it.
+- Turn off the eye timing warp (`afr_warp=0`, the checkbox in GrayHorizon Settings, or Video > Eye timing warp in the headset menu). It costs a little GPU time per frame; if you never notice the depth problem it fixes, you won't miss it.
 - Try lowering all graphics settings to a low preset, then slowly turn them up until the CPU or GPU is at its limit.  I recommend keeping the environment detail as high as possible to keep things from "popping in" as they get closer to you.
 - The performance summary does a good job of providing estimates for resolution size.  You can try using those, or if using DLSS, change the setting to a lower percentage.
 
@@ -246,7 +247,7 @@ The two eyes are drawn on alternating game frames, so the left eye's picture is 
 
 The eye timing warp fixes it. Before each pair goes to the headset, every pixel of the left picture is moved to where it is one frame later, using the scene's depth: the scenery by the car's movement, other cars by their own, and your own car's cockpit by the car body's. Both eyes then show the same moment.
 
-- On by default (`afr_warp=1`). Switch it with **Ctrl+Shift+F10** in game, or the "Eye timing warp" checkbox in GrayHorizon Settings.
+- On by default (`afr_warp=1`). Switch it in the headset menu (**Video > Eye timing warp**), or with the "Eye timing warp" checkbox in GrayHorizon Settings.
 - Needs an upscaler (DLSS, or FSR in FH4): it uses the depth the upscaler is given. Without one it does nothing.
 - Not used with SteamVR's plain views or with `half_rate=1`.
 - It costs a little GPU time per frame. If you are short of frame rate and don't notice the depth problem, turn it off.
@@ -305,7 +306,7 @@ In FH6 this is the difference between other cars looking right and looking dark 
 A flat HUD does not work in a headset: its corners are out of sight. The mod takes the game's HUD apart into **elements** (minimap, speedometer, radar, the whole top strip with race position and lap times, pop-ups and so on) and hangs each one in the cockpit as a small floating panel. You decide where each one sits, how big it is and whether you want it at all.
 
 - An element you switch off is gone: it is not drawn in the cockpit and not on the main view either.
-- The `panels` hotkey hides and shows the speedometer, for cars whose own dials are enough. It lasts until you close the game.
+- The menu's **Speedometer** row (or the `panels` hotkey) hides and shows the speedometer, for cars whose own dials are enough. It lasts until you close the game.
 - `hud_panels=3` (or "HUD elements: Off" in GrayHorizon Settings) turns the whole system off and leaves the game's flat HUD.
 
 **Leave the game's HUD Safe Frame sliders at their default position** (Settings > HUD and gameplay). The built-in capture areas are made for it, and the mod then fits them to any resolution, trim and headset by itself.
@@ -316,24 +317,25 @@ FH4 has an element of its own, `center`, for the large banners in the middle of 
 
 ### Arranging the HUD
 
-Press the `calibration` hotkey. A box in the headset names the element you are adjusting and lists the keys; it follows your head, so look away from an element to see it clearly. While calibrating, these keys do not reach the game:
+Open the [headset menu](#the-menu-in-the-headset) and choose **Adjust HUD**. The title names the element you are adjusting; the menu sits low in your view, so the element stays in sight.
 
-| Key | Does |
+| Row | Does |
 |---|---|
-| Tab | Next element |
-| Ctrl+Tab | This element on / off |
-| Arrows (Shift: fine) | Move it in the cockpit, 1 cm (1 mm) |
-| PgUp / PgDn | Farther / nearer |
-| + / - | Larger / smaller |
-| Ctrl + plus / minus | Opacity of the element itself (100% = solid) |
-| Ctrl+PgUp / PgDn | Dark background behind it (0% = none, 100% = solid) |
-| Alt + arrows (Shift: x10) | Move the capture area, the piece of the game's HUD the element shows |
-| Ctrl + arrows | Resize the capture area |
-| F1 | Show the key list again |
+| Element | Left / right: the element to adjust |
+| On / off | This element on or off |
+| Move it | Enter, then the arrows move it in the cockpit, 1 cm a step. Enter or Back when done |
+| Distance | Left / right: nearer / farther |
+| Size | Left / right: smaller / larger |
+| Opacity | The element itself (100% = solid) |
+| Background | Dark background behind it (0% = none, 100% = solid) |
+| Capture area | The piece of the game's HUD the element shows: move it, resize it, 1 or 10 pixels a step |
+| Save as the default for all cars | Saves the layout for this car, then makes it the default (see below) |
 
-Hold a key to repeat it. Press the `calibration` hotkey again to save.
+Back saves the layout for this car and returns to the main menu. Hold a direction to repeat it.
 
-Opacity and background are for the elements that are always on screen: map, speedometer, drive mode box (FH5/FH6), and radar (FH6). The others come and go and are drawn solid.
+Opacity and background are for the elements that are always on screen: map, speedometer, drive mode box (FH5/FH6), and radar (FH6). The others come and go and are drawn solid; their rows say so.
+
+While Adjust HUD is open, the keyboard keys of the old calibration mode work too: Tab (next element), Ctrl+Tab (on / off), arrows (move; Shift: 1 mm), PgUp / PgDn (farther / nearer), + / - (size), Ctrl + plus / minus (opacity), Ctrl+PgUp / PgDn (background), Alt + arrows (move the capture area; Shift: x10), Ctrl + arrows (resize it).
 
 ### One layout per car
 
@@ -341,10 +343,10 @@ Cars differ: a dash that hides the map in one car is empty space in the next. So
 
 - The first time you calibrate in a car, that car gets its own copy of **every** element's place, size, opacity, background and on / off. It keeps them from then on, whatever you change elsewhere.
 - Cars you have not calibrated use the **default** layout.
-- The `hud_save_default` hotkey (Ctrl+Shift+F3) makes whatever is on screen right now the default. Cars with their own layout are not touched.
+- **Save as the default for all cars** (in Adjust HUD) makes the layout on screen the default. Cars with their own layout are not touched.
 - The capture areas are the same for every car: they describe the game's HUD, not the car.
 
-The message on leaving calibration says where it was saved: "for this car" or "as the default".
+The message on leaving Adjust HUD says where it was saved: "for this car" or "as the default".
 
 Per-car layouts need the game's **Data Out** (next section), which tells the mod which car you are in. Without it every change goes to the default.
 
@@ -370,7 +372,7 @@ telemetry_forward=
 
 ## Per-car seat position
 
-The seat hotkeys move your eye point 1 cm at a time; hold them to repeat. The position is saved for the car you are in (`[seats]` in the ini); other cars use the default. Delete a car's line to put it back.
+The seat hotkeys, or the seat rows in the headset menu, move your eye point 1 cm at a time; hold them to repeat. The position is saved for the car you are in (`[seats]` in the ini); other cars use the default. Delete a car's line to put it back.
 
 ## Settings per headset
 
@@ -387,35 +389,68 @@ trim_bottom=30
 foveated=1
 ```
 
+## The menu in the headset
+
+Press **F12** (or the button you give it) and a menu opens in the lower part of your view, where the windshield stays in sight. Every row shows what it is set to now.
+
+- **Recenter** (selected when the menu opens: menu, then Enter, recenters and closes it)
+- **Seat forward / back** and **Seat up / down** (left / right, 1 cm a step, shown in cm)
+- **Speedometer** on / off
+- **Adjust HUD** (see [Arranging the HUD](#arranging-the-hud))
+- **Screenshot**
+- **Video**: frame rate readout, performance display, stable camera, anti-aliasing, sharpness, foveated rendering, eye timing warp
+- **Flat view** on / off: the whole game screen in front of you
+
+Up / down choose a row, left / right change it, Enter selects, Back goes back a page or closes the menu. Notifications such as the frame rate or "Screenshot" still show, just above the menu.
+
+**The controls** are hotkeys like any other, set in GrayHorizon Settings (the **Menu in the headset** box) or in the ini:
+
+| Default | Name | Action |
+|---|---|---|
+| F12 | `menu` | Open / close the menu |
+| Up / Down, D-pad | `menu_up` / `menu_down` | Choose a row |
+| Left / Right, D-pad | `menu_left` / `menu_right` | Change the row's setting |
+| Enter, A | `menu_enter` | Select |
+| Esc, B | `menu_back` | Back / close |
+
+`XInput` in a binding (`XInput:HatUp`, `XInput:B1`) means any Xbox-style pad, whatever Windows calls it. On a wheel, bind the menu button and Enter / Back to rim buttons and use its D-pad.
+
+**What the game sees:** only the menu button is always kept from the game. The other controls pass to the game as usual, except while the menu is on screen; then the game does not get them (keys, pad and wheel buttons alike), and a button pressed in the menu stays hidden until you let go of it. FH4 only reads a wheel's first 32 buttons; a higher one can still be a hotkey.
+
 ## Hotkeys
 
 They work while the game window has focus, and every one can be changed in GrayHorizon Settings or under `[hotkeys]` in the ini.
 
 | Default | Name | Action |
 |---|---|---|
+| F12 | `menu` | The menu in the headset (above) |
 | F8 | `vr_toggle` | VR on / off |
 | Ctrl+Space | `recenter` | Recenter |
-| F2 | `flat_view` | Flat view on / off: the whole game screen in front of you |
 | Ctrl+Up / Ctrl+Down | `seat_forward` / `seat_back` | Seat forward / back 1 cm |
 | Ctrl+PgUp / Ctrl+PgDn | `seat_up` / `seat_down` | Seat up / down 1 cm |
-| F7 | `calibration` | HUD calibration on / off (off saves) |
 | F11 | `panels` | Speedometer element off / on (until the game is closed) |
-| Ctrl+Shift+F3 | `hud_save_default` | The HUD layout on screen becomes the default |
 | F5 | `fps` | Frame rate readout in the headset |
 | F6 | `performance` | Performance display in the headset |
 | F9 | `console` | Status window show / hide |
-| F10 | `foveated` | Foveated rendering: next level |
-| F12 | `stable_camera` | Stable camera on / off |
-| Ctrl+Shift+F10 | `afr_warp` | Eye timing warp on / off (see [Eye timing warp](#eye-timing-warp)) |
-| Ctrl+Shift+F12 | `anti_aliasing` | Temporal anti-aliasing on / off |
-| Ctrl+Shift+PgUp / PgDn | `taa_sharper` / `taa_softer` | Sharpening +/- 0.1 |
 | Ctrl+Shift+F11 | `per_eye` | Per-eye rendering on / off (FH4 only) |
 | F3 | `screenshot` | Screenshot of what you see in the headset, HUD elements included (a JPEG in `Pictures\GrayHorizon`; the flat screen in menus) |
 | F4 | `frame_capture` | Capture for a problem report (large files in the game folder) |
 
 The everyday keys are plain function keys so they can be reached with a headset on. The Horizon games do not use the function keys themselves.
 
+**In the menu now, no hotkey (since 1.1):** flat view, HUD calibration, save the HUD as the default, stable camera, eye timing warp, anti-aliasing, sharpening and foveated rendering. A binding for one of them left in an older ini is ignored (the log says so).
+
 Write a key on its own or with `Ctrl`, `Shift` and/or `Alt` (`F1`-`F24`, `A`-`Z`, `0`-`9`, `Space`, `Up`, `Down`, `PgUp`, `PgDn` ...). Several combinations for one action: separate them with commas. No key: `none`. Changes apply at the next game start.
+
+### Wheel, joystick and button-box buttons
+
+Any hotkey can also be a button on a wheel rim, joystick or button box. In GrayHorizon Settings, click a hotkey box and press the button: it is added to the box as the controller's name and the button number, for example `FANATEC Wheel:B12`. A hat (D-pad) direction is written as `HatUp`, `HatRight`, `HatDown` or `HatLeft`. Keys and buttons can share an action: `screenshot=F3, FANATEC Wheel:B12`.
+
+- The game still sees a button you make a hotkey, so pick one the game does not use. A key the game must not see is better bound as a keyboard key, which the mod does keep from the game (a button box can usually send key combos). The [menu](#the-menu-in-the-headset)'s buttons are the exception: the game never gets the menu button, nor the others while the menu is on screen.
+- One button for two hotkeys: the first in the list wins, so give each button one job.
+- In the ini you can shorten the name to any part of it (`Fanatec:B12`). It is not case-sensitive.
+- Hold a seat or sharpening button and it repeats, like a key.
+- A controller plugged in after the game starts is found within 10 seconds.
 
 ## SteamVR
 
