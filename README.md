@@ -23,9 +23,10 @@ GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https
    - Steam: right-click the game → Manage → Browse local files.
    - Game Pass / Microsoft Store (FH5 & FH6 only): Xbox app → Manage → Files → Content folder. Rename `xinput1_3.dll` to `xinput1_4.dll`.
 3. In the game: V-Sync off, frame rate unlocked, motion blur off, TAA/FXAA/DLSS/FSR/Frame Gen off, HDR off (FH5/FH6).
-4. Data Out on (127.0.0.1:20440) for per-car HUD layouts. Already using it for SimHub or a rig? See [Data Out](HUD-AND-SEAT.md#data-out).
-5. Launch with the headset connected and switch to cockpit view.
-6. Press `Ctrl+Space` to recenter (it also recenters automatically the first time the headset reports you’re wearing it).
+4. HUD and gameplay: set HUD Safe Frame to Horizontal 8 / Vertical 37 in FH4, and Horizontal 5 / Vertical 9 in FH5 and FH6. In FH6, set Radar position to Center right.
+5. Data Out on (127.0.0.1:20440) for per-car HUD layouts. Already using it for SimHub or a rig? See [Data Out](HUD-AND-SEAT.md#data-out).
+6. Launch with the headset connected and switch to cockpit view.
+7. Press `Ctrl+Space` to recenter (it also recenters automatically the first time the headset reports you’re wearing it).
 
 The first start with a headset the mod has never seen is a rough size. Restart once and it switches to the real one. See [The first start](INSTALL.md#the-first-start).
 
