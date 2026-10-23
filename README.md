@@ -11,9 +11,11 @@ Anything else is not maintained by me.
 
 GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https://www.ko-fi.com/GrayHorizon), but you are under no obligation to do so.
 
+<p align="center" width="100%">
 <img src="media/fh5-hot-wheels.jpg" alt="FH5 Hot Wheels — race info and minimap in the cockpit" width="32%">
 <img src="media/fh4-night-race.jpg" alt="FH4 night race — laps, position and minimap placed" width="32%">
 <img src="media/fh6-tokyo.jpg" alt="FH6 Tokyo — minimap on the dash" width="32%">
+</p>
 
 ## Quick start
 
