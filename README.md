@@ -10,7 +10,7 @@ Each gives a stereo 3D cockpit view with full head tracking through OpenXR.
 One zip per game: `GrayHorizon-FH4/5/6-<version>.zip`.  
 Anything else is not maintained by me.
 
-Use Github to open any issues you encounter, or joing the discussion in the [Flat2VR Modding Discord](https://discord.gg/flat2vr), under Other VR Modding → new-vr-mods, in the thread “Forza Horizon 4, 5, and 6 - GrayHorizon VR”.
+Use Github to open any issues you encounter, or join the discussion in the [Flat2VR Modding Discord](https://discord.gg/flat2vr), under Other VR Modding → new-vr-mods, in the thread “Forza Horizon 4, 5, and 6 - GrayHorizon VR”.
 
 GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https://www.ko-fi.com/GrayHorizon), but you are under no obligation to do so.
 
