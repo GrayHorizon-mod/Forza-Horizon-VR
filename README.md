@@ -1,7 +1,6 @@
 # GrayHorizon: VR mods for Forza Horizon 4, 5 and 6
 
-Not affiliated with Playground / Turn 10 / Xbox / Microsoft.  
-Use at your own risk.
+Not affiliated with Playground / Turn 10 / Xbox / Microsoft.  Use at your own risk.
 
 Three separate injectors (one per game) that share the same design and the same settings program.  
 Each gives a stereo 3D cockpit view with full head tracking through OpenXR.
@@ -9,8 +8,6 @@ Each gives a stereo 3D cockpit view with full head tracking through OpenXR.
 **Official downloads are only from the [Releases](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest) page.**  
 One zip per game: `GrayHorizon-FH4/5/6-<version>.zip`.  
 Anything else is not maintained by me.
-
-Use Github to open any issues you encounter, or join the discussion in the [Flat2VR Modding Discord](https://discord.gg/flat2vr), under Other VR Modding → new-vr-mods, in the thread “Forza Horizon 4, 5, and 6 - GrayHorizon VR”.
 
 GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https://www.ko-fi.com/GrayHorizon), but you are under no obligation to do so.
 
@@ -29,6 +26,7 @@ GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https
 5. Data Out on (127.0.0.1:20440) for per-car HUD layouts. Already using it for SimHub or a rig? See [Data Out](HUD-AND-SEAT.md#data-out).
 6. Launch with the headset connected and switch to cockpit view.
 7. Press `Ctrl+Space` to recenter (it also recenters automatically the first time the headset reports you’re wearing it).
+8. Adjust the seat/head position, HUDs, video options with the `F12` key to bring up menu.  By default, use the arrow keys, `Enter`, and `ESC` to navigate.
 
 The first start with a headset the mod has never seen is a rough size. Restart once and it switches to the real one. See [The first start](INSTALL.md#the-first-start).
 
@@ -44,11 +42,9 @@ Full install steps, Game Pass notes, and the FH4 Save Converter are in [INSTALL.
 | Forza Horizon 5 | Steam 1.688.109.0 / Store 3.688.109.0 | Steam and Game Pass / Microsoft Store |
 | Forza Horizon 6 | Steam 6.461.691.0 / Store 3.461.691.0 | Steam and Game Pass / Microsoft Store |
 
-**FH4 progress in the Microsoft Store / Game Pass version?** The FH4 mod needs the Steam version, but your progress can come with you: the [GrayHorizon FH4 Save Converter](https://github.com/GrayHorizon-mod/FH4-Save-Converter) moves an FH4 profile from the Store version to Steam, or back. You need both versions, signed in with the same Xbox account.
- 
 A game update can break the hooks. On an unrecognized version the mod stays out of the way and the game runs normally (no VR).
 
-## What you get
+## Features
 
 - Stereo 3D cockpit with head tracking (alternating frames — game must hit 2× headset refresh)
 - Stable cockpit camera (removes game head-bob / g-force lean) - great for motion simulators
@@ -79,12 +75,13 @@ Online play is at your own risk. The mods hook camera and rendering.
 
 ## Reporting a problem
 
-Open an [issue](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/issues) and:
+Open an [issue](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/issues) or join the discussion in the [Flat2VR Modding Discord](https://discord.gg/flat2vr), under Other VR Modding → new-vr-mods, in the thread “Forza Horizon 4, 5, and 6 - GrayHorizon VR”.
+
+If opening an issue:
 
 1. Try safe mode first (`safe_mode=1`, or the box in GrayHorizon Settings). If the problem is gone, turn the extras back on one at a time.
 2. Attach the log from a run where it happened. Steam: the game folder (`gh4vr.log` / `gh5vr.log` / `gh6vr.log`). Game Pass: `Documents\GrayHorizon\FH5` or `FH6`. The log is replaced at each launch. FH5 and FH6 keep the previous three as `...prev1.log` to `...prev3.log`. The `==== summary` block lists your GPU, headset, OpenXR runtime and the settings. If the game crashed, the end of the log says where.
 3. Say what you saw and when: in the cockpit or a menu, one eye or both, and which key or button you had just pressed.
-
-Include the game version, headset and runtime.
+   
 
 Source is not public yet.
