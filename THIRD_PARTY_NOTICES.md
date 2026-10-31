@@ -2,7 +2,7 @@
 
 GrayHorizon's own code (the mods' `xinput1_3.dll` and `GrayHorizon Settings.exe`) is licensed under PolyForm Noncommercial 1.0.0 (see `LICENSE.md`). The following third-party parts keep their own licenses.
 
-## OpenXR Loader (`openxr_loader.dll`, version 1.0.22, all three games)
+## OpenXR Loader (`openxr_loader.dll`, version 1.0.22, all four games)
 
 Copyright (c) 2017-2020 The Khronos Group Inc. and contributors.
 Licensed under the **Apache License, Version 2.0** (full text in `LICENSE-APACHE-2.0.txt`).
@@ -18,7 +18,7 @@ SPDX-License-Identifier: Apache-2.0 OR MIT
 
 Source: https://github.com/KhronosGroup/OpenXR-SDK
 
-## NVIDIA DLSS (`nvngx_dlss.dll` 310.9.1 shipped with FH4; the NGX SDK library in all three mods)
+## NVIDIA DLSS (`nvngx_dlss.dll` 310.9.1 shipped with FH3 and FH4; the NGX SDK library in all four mods)
 
 These mods use NVIDIA DLSS. `nvngx_dlss.dll` is NVIDIA's runtime, redistributed unmodified under the NVIDIA RTX SDKs License, which also covers the NGX SDK library linked into each mod's DLL. FH5 and FH6 use the `nvngx_dlss.dll` that comes with the game. NVIDIA retains all rights to it; it may not be reverse engineered, modified or redistributed on its own, apart from this mod.
 
@@ -26,9 +26,9 @@ Copyright (c) NVIDIA Corporation. All rights reserved. NVIDIA, RTX and DLSS are 
 
 SDK and license: https://github.com/NVIDIA/DLSS
 
-## AMD FidelityFX SDK (`amd_fidelityfx_loader_dx12.dll`, `amd_fidelityfx_upscaler_dx12.dll`, FSR SDK v2.3.0, shipped with FH4)
+## AMD FidelityFX SDK (`amd_fidelityfx_loader_dx12.dll`, `amd_fidelityfx_upscaler_dx12.dll`, FSR SDK v2.3.0, shipped with FH3, FH4 and FH5)
 
-The FH4 mod uses AMD FidelityFX Super Resolution (FSR). The two DLLs are AMD's signed runtime, redistributed unmodified in binary form under the following license. The mod's source uses the SDK's API headers.
+The FH3, FH4 and FH5 mods use AMD FidelityFX Super Resolution (FSR); the FH6 mod uses the copies that ship with the game. The two DLLs are AMD's signed runtime, redistributed unmodified in binary form under the following license. The mod's source uses the SDK's API headers.
 
 Copyright (C) Advanced Micro Devices, Inc.
  
@@ -66,7 +66,7 @@ US$10.
 
 SDK: https://github.com/GPUOpen-LibrariesAndSDKs/FidelityFX-SDK
 
-## AMD FidelityFX RCAS (the sharpening pass in all three mods)
+## AMD FidelityFX RCAS (the sharpening pass in all four mods)
 
 The anti-aliasing sharpening pass is a re-implementation of the RCAS algorithm from AMD FidelityFX Super Resolution 1.0.
 
@@ -80,6 +80,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Source: https://github.com/GPUOpen-Effects/FidelityFX-FSR
 
-## Forza Horizon 4, 5 and 6
+## uwpinject (the idea behind `GrayHorizon FH3.exe`)
 
-Forza Horizon 4, Forza Horizon 5 and Forza Horizon 6 are © Microsoft / Playground Games. GrayHorizon contains no game code or game assets. It only hooks the running game on your own PC. It is not affiliated with or endorsed by Microsoft, Playground Games, NVIDIA or AMD.
+The FH3 launcher starts the Microsoft Store game the way uwpinject by Francesco149 shows (Windows' package debug settings start the app with the launcher as its debugger, which loads the mod and lets the game run). The launcher's code is GrayHorizon's own; uwpinject is released into the public domain (Unlicense).
+
+Source: https://github.com/Francesco149/uwpinject
+
+## Forza Horizon 3, 4, 5 and 6
+
+Forza Horizon 3, Forza Horizon 4, Forza Horizon 5 and Forza Horizon 6 are © Microsoft / Playground Games. GrayHorizon contains no game code or game assets. It only hooks the running game on your own PC. It is not affiliated with or endorsed by Microsoft, Playground Games, NVIDIA or AMD.
