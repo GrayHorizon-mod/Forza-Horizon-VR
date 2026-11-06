@@ -56,7 +56,7 @@ Full install steps, Game Pass notes, and the FH4 Save Converter are in [INSTALL.
 | Forza Horizon 5 | Steam 1.688.109.0 / Store 3.688.109.0 | Steam and Game Pass / Microsoft Store |
 | Forza Horizon 6 | Steam 6.461.691.0 / Store 3.461.691.0 and later | Steam and Game Pass / Microsoft Store |
 
-A game update can break the hooks. On an unrecognized version the mod stays out of the way and the game runs normally (no VR).
+A game update can potentially break the hooks.  FH6 has been built to generally survive updates.
 
 ## Features
 
