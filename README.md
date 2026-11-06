@@ -54,7 +54,7 @@ Full install steps, Game Pass notes, and the FH4 Save Converter are in [INSTALL.
 | Forza Horizon 3 | Microsoft Store 1.0.125.x | Microsoft Store, started with `GrayHorizon FH3.exe`. SteamVR only (FH3 runs in Windows’ app sandbox). See [Forza Horizon 3](INSTALL.md#forza-horizon-3). |
 | Forza Horizon 4 | Steam 1.478.564.0 | Steam only. Use the [FH4 Save Converter](https://github.com/GrayHorizon-mod/FH4-Save-Converter) to move progress from the old Store/Game Pass version. |
 | Forza Horizon 5 | Steam 1.688.109.0 / Store 3.688.109.0 | Steam and Game Pass / Microsoft Store |
-| Forza Horizon 6 | Steam 6.461.691.0 / Store 3.461.691.0 | Steam and Game Pass / Microsoft Store |
+| Forza Horizon 6 | Steam 6.461.691.0 / Store 3.461.691.0 and later | Steam and Game Pass / Microsoft Store |
 
 A game update can break the hooks. On an unrecognized version the mod stays out of the way and the game runs normally (no VR).
 
