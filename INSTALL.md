@@ -2,7 +2,7 @@
 
 Official downloads are only from the [Releases](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest) page.
 
-One zip per game: `GrayHorizon-FH3-<version>.zip`, `GrayHorizon-FH4-<version>.zip`, `GrayHorizon-FH5-<version>.zip`, or `GrayHorizon-FH6-<version>.zip`.
+One zip per game, always the latest: [GrayHorizon-FH3.zip](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH3.zip), [GrayHorizon-FH4.zip](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH4.zip), [GrayHorizon-FH5.zip](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH5.zip), or [GrayHorizon-FH6.zip](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH6.zip).
 
 Forza Horizon 3 installs differently from the others: see [Forza Horizon 3](#forza-horizon-3).
 
@@ -50,12 +50,12 @@ Uninstall: delete the files you copied into Content and the `Documents\GrayHoriz
 
 FH3 runs in Windows’ app sandbox. That changes two things:
 
-- **SteamVR must be the default OpenXR runtime** (SteamVR settings → OpenXR). Other runtimes, Pimax’s for example, cannot run from inside the sandbox. A Pimax headset works through SteamVR.  If SteamVR is not the runtime, the game simply starts without VR.
+- **SteamVR must be installed.** Since 1.3.0 GrayHorizon picks it for FH3 by itself, whatever the default OpenXR runtime is. Other runtimes, Pimax’s for example, cannot run from inside the sandbox. A Pimax headset works through SteamVR.  Without SteamVR the game simply starts without VR.
 - **The mod is started by its own launcher**, not by putting files into the game folder.
 
 **Microsoft Store install (the usual one, in `C:\Program Files\WindowsApps`):**
 
-1. Unzip `GrayHorizon-FH3-<version>.zip` into a folder of your own (Documents, `D:\Games`, ...), not into Program Files. Keep its files together.
+1. Unzip `GrayHorizon-FH3.zip` into a folder of your own (Documents, `D:\Games`, ...), not into Program Files. Keep its files together.
 2. Start FH3 with `GrayHorizon FH3.exe`, or open `GrayHorizon Settings.exe` and press **Start Forza Horizon 3** (bottom right).
 
 - The launcher gives FH3 permission to read that one folder (no administrator rights needed) and starts the game with the mod. FH3 started from the Start menu or the Xbox app stays the plain game. Some antivirus programs distrust launchers that load a mod into a game this way. If yours blocks `GrayHorizon FH3.exe`, allow it for this folder.

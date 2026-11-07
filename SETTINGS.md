@@ -7,10 +7,11 @@ The live panel at the top shows the frame rate, GPU and CPU load while the game 
 
 The settings are on four tabs. Changes apply the next time the game starts.
 
-- **Picture**: the headset profile, [learning mode](#learning-mode), **Size per eye** (35% to 150% of the headset's full size, with marks at the common sizes), per-eye rendering, anti-aliasing (DLSS, FSR, TAA or none), render scale, foveated rendering, trim, and **Frame timing**: *Eye timing warp* and *Run at half frame rate*.
+- **Picture**: the headset profile, [learning mode](#learning-mode), **Size per eye** (35% to 150% of the headset's full size, with marks at the common sizes; since 1.3.0, 100% is the headset's true full sharpness, so on headsets with uneven lens angles like the Pimax Crystal Super the slider reads lower than before), anti-aliasing (DLSS, FSR, TAA or none), render scale, foveated rendering, trim, and **Frame timing**: *Eye timing warp* and *Run at half frame rate*.
 - **Options**:
   - **Enable GrayHorizon** unticked: the game plays on the monitor as normal (no VR, no hotkeys, no status window).  At the next start the resolution goes back to your in-game setting before using this mod.
   - **VR enabled on startup** unticked (`auto_start=0`): VR comes on only when you press F8.
+  - **VR runtime** (`runtime=`): which OpenXR runtime this game uses: the system default, or one of the runtimes installed on your PC, for example SteamVR or Pimax OpenXR. Each game remembers its own. FH3 always uses SteamVR.
   - Also: stable camera, opening this window when the game starts, safe mode, and looking for updates.
   - **Reset to defaults**: puts the ticked parts back to how a new install has them: settings and hotkeys, seat positions, HUD layouts, and (not ticked unless you tick it) the learned picture size, which makes learning mode start over. Close the game first. Your current files are copied into a `GrayHorizon backup <date> <time>` folder next to them, so nothing is lost.
 - **Menu**: the keys and buttons for the [in-headset menu](HUD-AND-SEAT.md#in-headset-menu-summary).
@@ -36,7 +37,7 @@ Good to know:
 - Learning mode does **not** change anti-aliasing. Pick it first: DLSS on NVIDIA RTX cards, FSR on other cards. TAA works too on a powerful PC.
 - It does not change the game's own graphics settings. If the result is not smooth or sharp enough, lower some of the game's graphics quality settings and run learning mode again.
 - Without DLSS or FSR it only learns the size.
-- It starts by itself for a new install, a new headset, a swapped lens module, or another per-eye mode. Start it again any time: Picture tab → **Start learning mode**.
+- It starts by itself for a new install, a new headset, or a swapped lens module. Start it again any time: Picture tab → **Start learning mode**.
 - **Stop learning mode** (same button, while it runs) keeps the size it is on now, under your control on the slider.
 
 ## Hotkeys
@@ -54,7 +55,6 @@ They work while the game window has focus. Change them in GrayHorizon Settings o
 | F5 | `fps` | Frame-rate readout in the headset |
 | F6 | `performance` | Performance display (last 30 seconds) |
 | F9 | `console` | Status window show / hide |
-| Ctrl+Shift+F11 | `per_eye` | Per-eye rendering on / off (FH3 and FH4) |
 | F3 | `screenshot` | What you see in the headset, HUD included. A JPEG in `Pictures\GrayHorizon` (FH3: the `Screenshots` folder in its `LocalState`). The flat screen while in a menu. |
 | F4 | `frame_capture` | Capture for a problem report. Large files in the game folder (FH3: `LocalState`). |
 
@@ -90,7 +90,10 @@ Setting the menu up on a wheel’s D-pad is in [HUD-AND-SEAT.md](HUD-AND-SEAT.md
 | `snow_fix` | FH3 / FH4, canted mode: `1` (default) stops snow and rain being drawn as long sideways streaks. `2` = a simpler variant, `0` = off. Can be changed while the game runs. |
 | `ui_scene` | FH4: `1` (default) = 3D only while the driving screen is up. Menus that keep the cockpit camera running behind them (car selection, blueprints, the map) are shown flat. `0` = the cockpit camera alone decides. FH5 and FH6 always work this way. |
 | `no_wheel_view` | `flat` (default) = the cockpit view without the steering wheel goes to the flat screen, like the hood and bumper views. `3d` = keep it in VR. |
-| `start_early` | FH5 / FH6: `1` (default) = VR from the boot screens. `0` = when the world has loaded. |
+| `start_early` | FH5 / FH6: `1` (default) = VR from the loading screen, before the title screen. `0` = when the world has loaded. |
 | `eye_tag_guard` | `1` (default) = the game's own render queue tells the mod which frame it is drawing, and left and right images are kept in order from that. It corrects a slip within a few frames, after menus and rewinds too. `0` = only the older check of the frame queue's depth. Leave it on. |
 | `flat_zoom` | The flat screen's size in the headset (menus, the map, the hood and bumper views): `-5` to `5`, about 10% a step. `0` (default) = 3 m wide. Also in the in-headset menu: Video → Flat screen size. |
 | `flicker_watch` | FH5 diagnostics. Leave at `0`. |
+| `runtime` | The OpenXR runtime for this game: empty (default) = the system default, or a name such as `SteamVR` or `Pimax OpenXR`, matched against the installed runtimes. Also in GrayHorizon Settings → Options → VR runtime. FH3 ignores it and always uses SteamVR. |
+| `ssr_reflections` | FH6: `0` (default) = screen-space reflections are turned off in VR at every start, because they double reflections on water and wet roads (they reuse the previous frame, the other eye's). `1` = keep the game's own setting. |
+| `rt_reflections` | FH6: `0` (default) = ray-traced reflections are turned off in VR at every start (they do not fix the doubling and cost a lot of GPU). `1` = keep the game's own setting. |

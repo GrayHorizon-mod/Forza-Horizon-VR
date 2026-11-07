@@ -6,7 +6,7 @@ Four separate injectors (one per game) that share the same design and the same s
 Each gives a stereo 3D cockpit view with full head tracking through OpenXR.
 
 **Official downloads are only from the [Releases](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest) page.**  
-One zip per game: `GrayHorizon-FH3/4/5/6-<version>.zip`.  
+**Latest download:** [FH3](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH3.zip) · [FH4](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH4.zip) · [FH5](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH5.zip) · [FH6](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH6.zip) (one zip per game).  
 Anything else is not maintained by me.
 
 **New in v1.2:** Forza Horizon 3 support, learning mode (experimental), FSR upscaling, flat screen zoom adjustment, many bug fixes and small improvements.  
@@ -26,7 +26,7 @@ GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https
 
 ## Quick start
 
-1. Download the zip for your game from Releases.
+1. Download the zip for your game (the links at the top, or from Releases).
 2. Extract the files next to the game’s `.exe`:
    - Steam: right-click the game → Manage → Browse local files.
    - Game Pass / Microsoft Store (FH5 & FH6 only): Xbox app → Manage → Files → Content folder. Rename `xinput1_3.dll` to `xinput1_4.dll`.

@@ -11,16 +11,13 @@ On by default. Needs an upscaler. Costs a little GPU. Turn it off if you don’t
 - At 200 km/h the car moves about 40 cm in that one frame. The road beside the car can seem to rise toward the windows. Some people notice it straight away. Others never do.
 - Switch it in the headset menu (**Video → Eye timing warp**) or with the checkbox in GrayHorizon Settings.
 - It uses the depth an upscaler is given (DLSS or FSR). Without an upscaler it does nothing.
-- It is not used with plain views (SteamVR and Meta Link, see below), or when running at half frame rate.
+- Since 1.3.0 it also works with plain views (SteamVR and Meta Link, see below): the left picture is warped first, then redrawn into the runtime's view. It is not used when running at half frame rate.
 - Where something close (a window pillar, another car) uncovers scenery that was hidden a frame earlier, that spot is filled from the background next to it. At very high speed you may see a slight smear along those edges.
 
 ## Per-eye rendering
 
-| Mode | Notes |
-|------|-------|
-| Canted (recommended) | Each eye’s picture is turned outward. All game effects work. |
-| Off-center (experimental) | Exact skewed view. Some effects break. |
-| Off | One wide picture for both eyes. Most pixels. |
+Each eye gets its own picture, turned outward to match its lens (canted). All game effects work, and it needs the fewest pixels for the same sharpness.
+Since 1.3.0 this is the only mode: the off-center and "one wide view for both eyes" modes are retired. An older ini with one of them is switched to canted by itself at the next start, so the trim works for everyone.
 
 ## Picture trim (canted mode)
 
@@ -38,7 +35,7 @@ Performance is about the same frame rate, with about 4 to 6 percent more GPU loa
 
 The log says which is in use: `xr: plain views ON` or `off`. 
 
-**Which runtime to use.** If your headset has its own OpenXR runtime (Pimax OpenXR for a Pimax headset), use that. Use SteamVR when it is the only runtime your headset has.  **FH3 requires SteamVR**
+**Which runtime to use.** If your headset has its own OpenXR runtime (Pimax OpenXR for a Pimax headset), use that. Use SteamVR when it is the only runtime your headset has. You can pick the runtime per game in GrayHorizon Settings → Options → **VR runtime**, without changing the system default.  **FH3 requires SteamVR** and picks it by itself.
 
 **Picture size.**  Set SteamVR to 100% before you compare sizes or frame rates. If SteamVR drops to half the headset’s rate (its motion smoothing), the game is not keeping up: lower the resolution or DLSS/FSR scaling.
 
@@ -54,7 +51,6 @@ FH3 is a Microsoft Store app and runs in Windows’ app sandbox (an AppContainer
 
 ## Known issues
 
-- **Off-center per-eye mode**: some of the game’s own effects cannot handle a skewed view. In FH4, grass and rock particles flash in the right eye, and SSAO shades wrongly near the bottom of the windshield. Canted mode does not do this.
 - **Shadows and textures still come in at the game’s own distance.** That is the same on a monitor.
 - **Some older car models are missing bodywork** you would never see from the driver’s seat on a monitor (a rear door, for example). Turning your head shows it.
 - **Other cars with an upscaler.** The mod works out motion for the scenery, your own car, and the nearest 16 other cars within 250 m. A car that has just appeared can take up to 2 seconds to be picked up, and looks pixelated until then (most visible with oncoming traffic at very high closing speeds). Wheels are treated as part of the body, so spinning wheels stay a little rough. Every vehicle is treated as car-sized, so trucks and buses are only partly covered. 
@@ -62,6 +58,7 @@ FH3 is a Microsoft Store app and runs in Windows’ app sandbox (an AppContainer
 - **FH3, Microsoft Store install: DLSS does not start.** NVIDIA’s driver turns it down from inside the sandbox (`0xbad00002` in the log). FSR works.
 - **FH3 on Intel Arc:** the launcher does not load FH3ArcFix yet.
 - **OpenXR Toolkit** is kept out of FH4 because its layer crashes the game. `openxr_toolkit=1` lets it load, at your own risk.
+- **FH6 reflections.** Screen-space reflections reuse the previous frame, which in VR is the other eye's, so water and wet roads showed a second reflection about 20 degrees off. No quality level and no ray-traced reflections change that, so the mod turns both off in VR (`ssr_reflections` / `rt_reflections` keep the game's settings).
 
 ## How it works
 
