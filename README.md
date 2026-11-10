@@ -5,17 +5,11 @@ Not affiliated with Playground / Turn 10 / Xbox / Microsoft.  Use at your own ri
 Four separate injectors (one per game) that share the same design and the same settings program.  
 Each gives a stereo 3D cockpit view with full head tracking through OpenXR.
 
+GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https://www.ko-fi.com/GrayHorizon), but you are under no obligation to do so.
+
 **Official downloads are only from the [Releases](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest) page.**  
 **Latest download:** [FH3](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH3.zip) · [FH4](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH4.zip) · [FH5](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH5.zip) · [FH6](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest/download/GrayHorizon-FH6.zip) (one zip per game).  
-Anything else is not maintained by me.
-
-**New in v1.2:** Forza Horizon 3 support, learning mode (experimental), FSR upscaling, flat screen zoom adjustment, many bug fixes and small improvements.  
-A big Thanks to **Cammo Freak** (`@cammofreak` on Discord) for their help with FH3!!
-
-**BREAKING CHANGE:** Telemetry (data out) is no longer needed or supported. If you were using it before to forward your data out to another program, you will need to put that program's IP and port back into the game settings.  
 The full list of changes is on the [release page](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/releases/latest).
-
-GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https://www.ko-fi.com/GrayHorizon), but you are under no obligation to do so.
 
 <p align="center" width="100%">
 <img src="media/fh3-hot-wheels.jpg" alt="FH3 Hot Wheels — minimap and speedometer in the cockpit, an event flag out in the world" width="24%">
