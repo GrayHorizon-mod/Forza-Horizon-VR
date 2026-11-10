@@ -35,7 +35,7 @@ GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https
 4. HUD and gameplay: Make sure your HUD Safe Frame is set to the default.  These are Horizontal 7 / Vertical 20 in FH3, Horizontal 8 / Vertical 37 in FH4, and Horizontal 5 / Vertical 9 in FH5 and FH6. In FH6, set Radar position to Center right.
 5. Launch with the headset connected and switch to cockpit view.
 6. Press `Ctrl+Space` to recenter (it also recenters automatically the first time the headset reports you’re wearing it).
-7. Adjust the seat/head position, HUDs, video options with the `F12` key to bring up menu.  By default, use the arrow keys, `Enter`, and `ESC` to navigate.
+7. Adjust the seat/head position, HUDs, video options with the `F12` key to bring up menu.  By default, use the arrow keys, `Enter`, and `ESC` to navigate.  For easier use, you can [use your wheel or controller](HUD-AND-SEAT.md#using-the-menu-on-a-wheel-or-a-controller).
 
 **Learning mode:  --Experimental--** 
 - The mod can help adjust your resolution and scaling for optimum performance and the best quality in usually around 10 minutes.
