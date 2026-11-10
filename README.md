@@ -90,7 +90,7 @@ Online play is at your own risk. The mods hook camera and rendering.
 
 ## Reporting a problem
 
-Open an [issue](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/issues) or join the discussion in the [Flat2VR Modding Discord](https://discord.gg/flat2vr), under Other VR Modding → new-vr-mods, in the thread “Forza Horizon 3, 4, 5, and 6 - GrayHorizon VR”.
+Open an [issue](https://github.com/GrayHorizon-mod/Forza-Horizon-VR/issues) or join the discussion in the [GrayHorizon Flat2VR Modding Discord channel](https://discord.com/channels/747967102895390741/1561119008768663643).
 
 If opening an issue:
 
