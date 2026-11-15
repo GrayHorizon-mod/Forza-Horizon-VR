@@ -65,6 +65,7 @@ A game update can potentially break the hooks.  FH6 has been built to generally 
 - In-headset menu (F12, or use wheel/controller) allows control of everything without removing your headset
 - The mod can be fully disabled while staying installed by an option in the settings program
 - Motion compensation via OpenXR is supported
+- When using FH3, full data out support is included, same format as FH4/5/6.  Great for motion rigs, dashboards, etc. 
 
 ## Requirements
 
