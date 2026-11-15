@@ -50,25 +50,26 @@ Uninstall: delete the files you copied into Content and the `Documents\GrayHoriz
 
 FH3 runs in Windows’ app sandbox. That changes two things:
 
-- **SteamVR must be installed.** Since 1.3.0 GrayHorizon picks it for FH3 by itself, whatever the default OpenXR runtime is. Other runtimes, Pimax’s for example, cannot run from inside the sandbox. A Pimax headset works through SteamVR.  Without SteamVR the game simply starts without VR.
-- **The mod is started by its own launcher**, not by putting files into the game folder.
+- **SteamVR must be installed.** GrayHorizon picks it for FH3, regardless of the default OpenXR runtime.  Without SteamVR the game simply starts without VR.
+- **FH3 is started from GrayHorizon Settings** (its **Start Forza Horizon 3** button).  You will be asked if you want to create a desktop shortcut.  If you accept, you can start FH3 from the shortcut in the future, otherwise you can start from the settings program, or directly by running "GrayHorizon FH3.exe".  SteamVR is required.  FH3 Data Out (telemetry for motion rigs, shakers and dashboards) is included.
 
 **Microsoft Store install (the usual one, in `C:\Program Files\WindowsApps`):**
 
-1. Unzip `GrayHorizon-FH3.zip` into a folder of your own (Documents, `D:\Games`, ...), not into Program Files. Keep its files together.
-2. Start FH3 with `GrayHorizon FH3.exe`, or open `GrayHorizon Settings.exe` and press **Start Forza Horizon 3** (bottom right).
+- Unzip `GrayHorizon-FH3.zip` into a folder of your own (Documents, `D:\Games`, ...), not into Program Files. Keep its files together.
+- Open `GrayHorizon Settings.exe` and press **Start Forza Horizon 3** (bottom right). Say yes to the desktop shortcut it offers, and start FH3 from that from then on. `GrayHorizon FH3.exe` still works: it opens GrayHorizon Settings and starts the game the same way.
 
-- The launcher gives FH3 permission to read that one folder (no administrator rights needed) and starts the game with the mod. FH3 started from the Start menu or the Xbox app stays the plain game. Some antivirus programs distrust launchers that load a mod into a game this way. If yours blocks `GrayHorizon FH3.exe`, allow it for this folder.
+- The launcher (`GrayHorizon FH3.exe`, which GrayHorizon Settings uses) gives FH3 permission to read that one folder (no administrator rights needed) and starts the game with the mod. FH3 started from the Start menu or the Xbox app does not use VR. Some antivirus programs distrust launchers that load a mod into a game this way. If yours blocks `GrayHorizon FH3.exe`, allow it for this folder.
 
 **A copy of FH3 in a normal folder you can write to:** 
 
 - If your install has a developer mode, turn that option on.
 
-- Close FH3, rename the game’s `GFSDK_Aftermath_Lib_UWP.x64.dll` to `gfsdk_orig.dll`, copy all the files from the zip into the game folder, and start FH3 as usual. If `gfsdk_orig.dll` is already there, the mod is installed: skip the rename, or it replaces the game’s own DLL with the mod.
+- Close FH3, rename the game’s `GFSDK_Aftermath_Lib_UWP.x64.dll` to `gfsdk_orig.dll`, copy all the files from the zip into the game folder. If `gfsdk_orig.dll` is already there, the mod is installed: skip the rename, or it replaces the game’s own DLL with the mod.
+- Open GrayHorizon Settings.exe and press Start Forza Horizon 3. You will be asked if you want to create a desktop shortcut. If you accept, you can start FH3 from the shortcut in the future, otherwise you can start from the settings program, or directly by running "GrayHorizon FH3.exe".  If started from the Start menu or the Xbox app, VR still works, but OpenXR Toolkit's settings and FH3 Data Out don't and a message stating this will appear  (`start_note=0` in `gh3vr.ini` turns the message off).
 
 **Where its files are:** the sandbox only lets FH3 write to its own data folder, `%LOCALAPPDATA%\Packages\Microsoft.OpusPG_8wekyb3d8bbwe\LocalState` (paste that into Explorer’s address bar). The settings, log, HUD layout and seat positions are there (`gh3vr*`), and F3 screenshots go into its `Screenshots` folder. GrayHorizon Settings finds them by itself.
 
-**DLSS:** NVIDIA keeps its DLSS files in `C:\ProgramData\NVIDIA\NGX`, which the sandbox cannot read.  On the Microsoft Store install, DLSS does not start yet, even with permission: NVIDIA’s driver turns it down (`0xbad00002` in the log). Use FSR or TAA there.
+**DLSS:** NVIDIA keeps its DLSS files in `C:\ProgramData\NVIDIA\NGX`, which the sandbox cannot read.  On the Microsoft Store install, DLSS does not start, even with permission: NVIDIA’s driver turns it down (`0xbad00002` in the log). Use FSR or TAA there.
 
 On a copy in a normal folder, DLSS works once FH3 has that permission. Open Command Prompt as administrator and run this once (the uninstaller shows the command to take it back):
 
@@ -76,9 +77,13 @@ On a copy in a normal folder, DLSS works once FH3 has that permission. Open Comm
 icacls "C:\ProgramData\NVIDIA\NGX" /grant "*S-1-15-2-1987231219-3494637732-3076478737-3503969843-3465841799-2831659819-1889736820:(OI)(CI)(RX)"
 ```
 
+**OpenXR Toolkit:** works in FH3 when started from GrayHorizon Settings or "GrayHorizon FH3.exe".  Due to the sandbox, its access to other DLLs, such as needed for eye tracking, is not available in FH3.
+
+**FH3 Data Out:** FH3 never got the Data Out telemetry option of the later games. `FH3DataOut.exe`, included beside GrayHorizon Settings, sends the same packet from outside the game, for SimHub, FlyPT Mover, DR Sim Manager and the like. On GrayHorizon Settings' **Data Out** tab, tick **Start FH3 Data Out with the game** and set where it sends to (up to three address:port destinations; SimHub listens on `127.0.0.1:8888` unless set otherwise). It then starts minimized with FH3 and closes with it. Its settings are kept in `FH3DataOut.ini` beside it, which you can also edit by hand when running it on its own. More in `FH3 Data Out.html` in the download.
+
 **Intel Arc:** the launcher does not load FH3ArcFix yet.
 
-**Uninstall:** close FH3 and GrayHorizon Settings, run `Uninstall GrayHorizon FH3.cmd` from the mod’s folder (it says what it will do and asks first), then delete the folder. The mod never changes the game’s files or your saves. On a copy in a normal folder, also rename `gfsdk_orig.dll` back.
+**Uninstall:** close FH3 and GrayHorizon Settings, run `Uninstall GrayHorizon FH3.cmd` from the mod’s folder (it says what it will do and asks first; it also removes the desktop shortcut), then delete the folder. The mod never changes the game’s files or your saves. On a copy in a normal folder, also rename `gfsdk_orig.dll` back.
 
 ## Updates
 

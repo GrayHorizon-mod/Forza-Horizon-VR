@@ -24,12 +24,13 @@ The full list of changes is on the [release page](https://github.com/GrayHorizon
 2. Extract the files next to the game’s `.exe`:
    - Steam: right-click the game → Manage → Browse local files.
    - Game Pass / Microsoft Store (FH5 & FH6 only): Xbox app → Manage → Files → Content folder. Rename `xinput1_3.dll` to `xinput1_4.dll`.
-   - FH3 (Microsoft Store) is different: unzip it into a folder of your own and start the game with `GrayHorizon FH3.exe`. It needs SteamVR as the OpenXR runtime. See [Forza Horizon 3](INSTALL.md#forza-horizon-3).
-3. Video: V-Sync off, frame rate unlocked, motion blur off, TAA/FXAA/DLSS/FSR/Frame Gen off, HDR off, Dynamic Optimization off (FH3/FH4).
-4. HUD and gameplay: Make sure your HUD Safe Frame is set to the default.  These are Horizontal 7 / Vertical 20 in FH3, Horizontal 8 / Vertical 37 in FH4, and Horizontal 5 / Vertical 9 in FH5 and FH6. In FH6, set Radar position to Center right.
-5. Launch with the headset connected and switch to cockpit view.
-6. Press `Ctrl+Space` to recenter (it also recenters automatically the first time the headset reports you’re wearing it).
-7. Adjust the seat/head position, HUDs, video options with the `F12` key to bring up menu.  By default, use the arrow keys, `Enter`, and `ESC` to navigate.  For easier use, you can [use your wheel or controller](HUD-AND-SEAT.md#using-the-menu-on-a-wheel-or-a-controller).
+   - FH3 (Microsoft Store) is different: unzip it into a folder of your own, open `GrayHorizon Settings.exe` and press **Start Forza Horizon 3**. You will be asked if you want to create a desktop shortcut.  If you accept, you can start FH3 from the shortcut in the future, otherwise
+   you can start from the settings program, or directly by running "GrayHorizon FH3.exe".  SteamVR is required.  FH3 Data Out (telemetry for motion rigs, shakers and dashboards) is included. See [Forza Horizon 3](INSTALL.md#forza-horizon-3).
+3. HUD and gameplay: Make sure your HUD Safe Frame is set to the default.  These are Horizontal 7 / Vertical 20 in FH3, Horizontal 8 / Vertical 37 in FH4, and Horizontal 5 / Vertical 9 in FH5 and FH6. In FH6, set Radar position to Center right.
+4. Launch with the headset connected and switch to cockpit view.
+5. Press `Ctrl+Space` to recenter (it also recenters automatically the first time the headset reports you’re wearing it).
+6. Adjust the seat/head position, HUDs, video options with the `F12` key to bring up menu.  By default, use the arrow keys, `Enter`, and `ESC` to navigate.  For easier use, you can [use your wheel or controller](HUD-AND-SEAT.md#using-the-menu-on-a-wheel-or-a-controller), which only requires one dedicated button.
+7. While the screen capture areas for the HUDs should be close, you might be missing part of a gauge, or have two HUDs overlapping each other.  See [HUD-AND-SEAT.md](HUD-AND-SEAT.md) for information on adjusting this.
 
 **Learning mode:  --Experimental--** 
 - The mod can help adjust your resolution and scaling for optimum performance and the best quality in usually around 10 minutes.
@@ -37,7 +38,7 @@ The full list of changes is on the [release page](https://github.com/GrayHorizon
 - The next few times (generally only 3 but up to 5) the game is started, learning begins: drive at least 3 minutes, then restart anytime after the headset says so.
 - After learning mode is complete, the size it learned for your PC will be saved.  Please note the image or fps may get worse before getting better when learning mode is active as different adjustments are measured.  See [Learning mode](SETTINGS.md#learning-mode).
 
-Uninstall = delete the files you copied (and the `Documents\GrayHorizon` folder on Game Pass). FH3: run `Uninstall GrayHorizon FH3.cmd`, then delete its folder.
+Uninstall = delete the files you copied (and the `Documents\GrayHorizon` folder on Game Pass). FH3: run `Uninstall GrayHorizon FH3.cmd` (it also removes the desktop shortcut), then delete its folder.
 
 Full install steps, Game Pass notes, and the FH4 Save Converter are in [INSTALL.md](INSTALL.md).
 
@@ -45,7 +46,7 @@ Full install steps, Game Pass notes, and the FH4 Save Converter are in [INSTALL.
 
 | Game | Tested version | Notes |
 |------|----------------|-------|
-| Forza Horizon 3 | Microsoft Store 1.0.125.x | Microsoft Store, started with `GrayHorizon FH3.exe`. SteamVR only (FH3 runs in Windows’ app sandbox). See [Forza Horizon 3](INSTALL.md#forza-horizon-3). |
+| Forza Horizon 3 | Microsoft Store 1.0.125.x | Microsoft Store, started from GrayHorizon Settings (or its desktop shortcut). SteamVR only (FH3 runs in Windows’ app sandbox). See [Forza Horizon 3](INSTALL.md#forza-horizon-3). |
 | Forza Horizon 4 | Steam 1.478.564.0 | Steam only. Use the [FH4 Save Converter](https://github.com/GrayHorizon-mod/FH4-Save-Converter) to move progress from the old Store/Game Pass version. |
 | Forza Horizon 5 | Steam 1.688.109.0 / Store 3.688.109.0 | Steam and Game Pass / Microsoft Store |
 | Forza Horizon 6 | Steam 6.461.691.0 / Store 3.461.691.0 and later | Steam and Game Pass / Microsoft Store |

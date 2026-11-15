@@ -9,9 +9,19 @@ The mod takes the game’s HUD apart into separate elements (minimap, speedomete
 - `hud_panels=3` in the ini turns the whole system off and leaves the game’s flat HUD.
 - A new install starts with the speedometer on and no background behind any element. Set your own in Adjust HUD.
 
-## Arranging the HUD (in-headset menu)
+## Calibrating/adjusting the HUD for first time use
 
-Press F12 (or the button you set) to open the menu, then choose **Adjust HUD**.
+The HUDs have been set to be as close as possible, as long as the correct HUD safe frame values are set.  However, due to the different shapes and sizes of headsets, manual calibration may be required for a perfect fit.
+
+- Press F12 (or the menu hotkey/button you set) to open the menu, then choose **Adjust HUD**.
+- Select the element that is not right, such as a speedo that is missing part of the gauge
+- Select **Capture area**
+- Generally, the size will be correct, but the area that is being captured might be slightly out of place.  Select **Move it** and use the arrows to get a perfect capture.
+- Exit the menu.  The capture area will be saved and used for all cars.
+
+## Arranging the HUD
+
+Press F12 (or the menu hotkey/button you set) to open the menu, then choose **Adjust HUD**.
 
 <img src="media/menu-adjust-hud.png" alt="Adjust HUD: element, on / off, move, distance, size, opacity, background, capture area, save as the default" width="420">
 
@@ -65,8 +75,9 @@ Press **F12** (or the button you give it). The menu opens in the lower part of t
 - **Recenter** (selected when the menu opens: Enter recenters and closes it)
 - **Seat forward / back** and **Seat up / down** (left / right, 1 cm a step, shown in cm)
 - **Speedometer** on / off
+- **Hide HUD**: every HUD element off until you show it again (a hotkey for it can be set in GrayHorizon Settings, `hide_hud`)
 - **Adjust HUD**
-- **Screenshot** (F3). A JPEG of what you see, HUD included, in `Pictures\GrayHorizon` (FH3: the `Screenshots` folder in its `LocalState`). In a menu it saves the flat screen.
+- **Screenshot** (F3). A JPEG of what you see, HUD included (both eyes side by side with **Screenshots of both eyes** ticked in GrayHorizon Settings), in `Pictures\GrayHorizon` (FH3: the `Screenshots` folder in its `LocalState`). In a menu it saves the flat screen.
 - **Video**: frame rate, performance display, stable camera, anti-aliasing, sharpness, foveated rendering, eye timing warp, flat screen size (how big the flat screen looks in the headset, -5 to +5)
 - **Flat view** on / off: the whole game screen in front of you
 

@@ -57,8 +57,6 @@ FH3 is a Microsoft Store app and runs in Windows’ app sandbox (an AppContainer
 - **After a game update** the mod may stay inactive until it is updated for that version. The game still runs, without VR.
 - **FH3, Microsoft Store install: DLSS does not start.** NVIDIA’s driver turns it down from inside the sandbox (`0xbad00002` in the log). FSR works.
 - **FH3 on Intel Arc:** the launcher does not load FH3ArcFix yet.
-- **OpenXR Toolkit** is kept out of FH4 because its layer crashes the game. `openxr_toolkit=1` lets it load, at your own risk.
-- **FH6 reflections.** Screen-space reflections reuse the previous frame, which in VR is the other eye's, so water and wet roads showed a second reflection about 20 degrees off. No quality level and no ray-traced reflections change that, so the mod turns both off in VR (`ssr_reflections` / `rt_reflections` keep the game's settings).
 
 ## How it works
 

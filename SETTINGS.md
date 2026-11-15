@@ -1,21 +1,24 @@
 ## GrayHorizon Settings app
 
 `GrayHorizon Settings.exe` is included in every zip.  
-It shows live status while the game is running, lets you change most options without editing the ini by hand, and checks for updates on GitHub. In FH3 it also has a **Start Forza Horizon 3** button. The mod opens it when the game starts. Turn that off with “Open this window when the game starts”, or `console=0`.
+It shows live status while the game is running, lets you change most options without editing the ini by hand, and checks for updates on GitHub. In FH3 it also has a **Start Forza Horizon 3** button: FH3 is started from here (or the desktop shortcut it offers), see [Forza Horizon 3](INSTALL.md#forza-horizon-3). The mod opens it when the game starts. Turn that off with “Open this window when the game starts”, or `console=0`.
 
 The live panel at the top shows the frame rate, GPU and CPU load while the game runs, with a graph. The yellow line under the graph is the advice from the performance summary, for example *Limited by the CPU: reduce graphics quality settings*.
 
-The settings are on four tabs. Changes apply the next time the game starts.
+The settings are on four tabs (five in FH3). Changes apply the next time the game starts.
 
 - **Picture**: the headset profile, [learning mode](#learning-mode), **Size per eye** (35% to 150% of the headset's full size, with marks at the common sizes; since 1.3.0, 100% is the headset's true full sharpness, so on headsets with uneven lens angles like the Pimax Crystal Super the slider reads lower than before), anti-aliasing (DLSS, FSR, TAA or none), render scale, foveated rendering, trim, and **Frame timing**: *Eye timing warp* and *Run at half frame rate*.
 - **Options**:
   - **Enable GrayHorizon** unticked: the game plays on the monitor as normal (no VR, no hotkeys, no status window).  At the next start the resolution goes back to your in-game setting before using this mod.
   - **VR enabled on startup** unticked (`auto_start=0`): VR comes on only when you press F8.
   - **VR runtime** (`runtime=`): which OpenXR runtime this game uses: the system default, or one of the runtimes installed on your PC, for example SteamVR or Pimax OpenXR. Each game remembers its own. FH3 always uses SteamVR.
+  - **Allow OpenXR Toolkit** (`openxr_toolkit`, ticked by default): OpenXR Toolkit is used when it is installed. Untick it to keep the Toolkit out of this game.
+  - **Screenshots of both eyes, side by side** (`screenshot_sbs`).
   - Also: stable camera, opening this window when the game starts, safe mode, and looking for updates.
   - **Reset to defaults**: puts the ticked parts back to how a new install has them: settings and hotkeys, seat positions, HUD layouts, and (not ticked unless you tick it) the learned picture size, which makes learning mode start over. Close the game first. Your current files are copied into a `GrayHorizon backup <date> <time>` folder next to them, so nothing is lost.
 - **Menu**: the keys and buttons for the [in-headset menu](HUD-AND-SEAT.md#in-headset-menu-summary).
 - **Hotkeys**: the hotkeys. Several keys and buttons are allowed: separate them with commas. Click a box and type a key's name (with modifiers, such as `Ctrl + Shift + A`), or press a wheel or controller button to have it filled in.
+- **Data Out** (FH3 only): **Start FH3 Data Out with the game** (`dataout_start`), up to three destinations (address:port), packets per second, and FH3 Data Out's own switches (feeding OpenXR-MotionCompensation, its live readout, precise timing). These are kept in `FH3DataOut.ini` beside `FH3DataOut.exe`. See [FH3 Data Out](INSTALL.md#forza-horizon-3).
 
 Most used hotkeys:
 - F12 (or a wheel/pad button) — in-headset menu
@@ -52,6 +55,7 @@ They work while the game window has focus. Change them in GrayHorizon Settings o
 | Ctrl+Up / Ctrl+Down | `seat_forward` / `seat_back` | Seat forward / back 1 cm |
 | Ctrl+PgUp / Ctrl+PgDn | `seat_up` / `seat_down` | Seat up / down 1 cm |
 | F11 | `panels` | Speedometer element off / on until the game is closed |
+| (none) | `hide_hud` | Every HUD element off / on (also **Hide HUD** in the headset menu) |
 | F5 | `fps` | Frame-rate readout in the headset |
 | F6 | `performance` | Performance display (last 30 seconds) |
 | F9 | `console` | Status window show / hide |
@@ -87,13 +91,10 @@ Setting the menu up on a wheel’s D-pad is in [HUD-AND-SEAT.md](HUD-AND-SEAT.md
 | `hud_layer` | With an upscaler: `1` draws the HUD in its own layer at the full headset size, so dials and text stay sharp. |
 | `tag_layer` | With an upscaler: `1` (default) draws name tags and checkpoint markers in their own layer, so the upscaler does not blur them. `0` = the older method. Can be changed while the game runs. |
 | `other_cars` | With an upscaler: `1` (default) gives other cars their own motion, so they stay as sharp as the scenery while they move. `0` = off. Can be changed while the game runs. |
-| `snow_fix` | FH3 / FH4, canted mode: `1` (default) stops snow and rain being drawn as long sideways streaks. `2` = a simpler variant, `0` = off. Can be changed while the game runs. |
 | `ui_scene` | FH4: `1` (default) = 3D only while the driving screen is up. Menus that keep the cockpit camera running behind them (car selection, blueprints, the map) are shown flat. `0` = the cockpit camera alone decides. FH5 and FH6 always work this way. |
 | `no_wheel_view` | `flat` (default) = the cockpit view without the steering wheel goes to the flat screen, like the hood and bumper views. `3d` = keep it in VR. |
 | `start_early` | FH5 / FH6: `1` (default) = VR from the loading screen, before the title screen. `0` = when the world has loaded. |
 | `eye_tag_guard` | `1` (default) = the game's own render queue tells the mod which frame it is drawing, and left and right images are kept in order from that. It corrects a slip within a few frames, after menus and rewinds too. `0` = only the older check of the frame queue's depth. Leave it on. |
 | `flat_zoom` | The flat screen's size in the headset (menus, the map, the hood and bumper views): `-5` to `5`, about 10% a step. `0` (default) = 3 m wide. Also in the in-headset menu: Video → Flat screen size. |
-| `flicker_watch` | FH5 diagnostics. Leave at `0`. |
+| `snow_fix` | FH3 / FH4, canted mode: `1` (default) stops snow and rain being drawn as long sideways streaks. `2` = a simpler variant, `0` = off. Can be changed while the game runs. |
 | `runtime` | The OpenXR runtime for this game: empty (default) = the system default, or a name such as `SteamVR` or `Pimax OpenXR`, matched against the installed runtimes. Also in GrayHorizon Settings → Options → VR runtime. FH3 ignores it and always uses SteamVR. |
-| `ssr_reflections` | FH6: `0` (default) = screen-space reflections are turned off in VR at every start, because they double reflections on water and wet roads (they reuse the previous frame, the other eye's). `1` = keep the game's own setting. |
-| `rt_reflections` | FH6: `0` (default) = ray-traced reflections are turned off in VR at every start (they do not fix the doubling and cost a lot of GPU). `1` = keep the game's own setting. |
