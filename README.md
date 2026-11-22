@@ -55,13 +55,14 @@ A game update can potentially break the hooks.  FH6 has been built to generally 
 
 ## Features
 
-- Stereo 3D cockpit with head tracking (alternating frames — game must hit 2× headset refresh)
-- Learning mode: finds the best picture and scaling size for your PC, usually in less than 10 minutes
+- Stereo 3D cockpit with head tracking
+- Built in frame generation when running at half frame rate.
 - Stable cockpit camera (removes game head-bob / g-force lean) - great for motion simulators
+- Learning mode: finds the best picture and scaling size for your PC, usually in less than 10 minutes
 - HUD broken into floating panels you can place per car (minimap, speedometer, race info, etc.)
 - Seat/head position adjustable per car and automatically saved
 - Canted per-eye rendering, optional foveated rendering and picture trim
-- DLSS (NVIDIA RTX) or FSR (any graphics card) in every game, or the mod’s own TAA
+- Supports DLSS (NVIDIA RTX) or FSR (any graphics card), or the mod’s own TAA
 - In-headset menu (F12, or use wheel/controller) allows control of everything without removing your headset
 - The mod can be fully disabled while staying installed by an option in the settings program
 - Motion compensation via OpenXR is supported
@@ -71,7 +72,6 @@ A game update can potentially break the hooks.  FH6 has been built to generally 
 
 - One of the game versions above (own the game; this does not include any game files)
 - A PC VR headset with an OpenXR runtime.  **FH3 works with SteamVR only.** See [SteamVR](TECHNICAL.md#steamvr) for more information.
-- Strong enough CPU/GPU to run the game at 2× the headset refresh rate
 - NVIDIA RTX for DLSS. FSR and the mod's own TAA work on any card.
 
 Online play is at your own risk. The mods hook camera and rendering.
