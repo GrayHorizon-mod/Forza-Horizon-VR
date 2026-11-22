@@ -70,7 +70,7 @@ The seat rows in the headset menu, or the seat hotkeys (Ctrl+Up / Ctrl+Down, Ctr
 
 Press **F12** (or the button you give it). The menu opens in the lower part of the view, so the windshield stays in sight. Every row shows what it is set to now.
 
-<img src="media/menu.png" alt="The in-headset menu: Recenter, seat, speedometer, Adjust HUD, screenshot, video and flat view" width="420">
+<img src="media/menu.png" alt="The in-headset menu: Recenter, seat, speedometer, Adjust HUD, screenshot and video" width="420">
 
 - **Recenter** (selected when the menu opens: Enter recenters and closes it)
 - **Seat forward / back** and **Seat up / down** (left / right, 1 cm a step, shown in cm)
@@ -78,8 +78,8 @@ Press **F12** (or the button you give it). The menu opens in the lower part of t
 - **Hide HUD**: every HUD element off until you show it again (a hotkey for it can be set in GrayHorizon Settings, `hide_hud`)
 - **Adjust HUD**
 - **Screenshot** (F3). A JPEG of what you see, HUD included (both eyes side by side with **Screenshots of both eyes** ticked in GrayHorizon Settings), in `Pictures\GrayHorizon` (FH3: the `Screenshots` folder in its `LocalState`). In a menu it saves the flat screen.
-- **Video**: frame rate, performance display, stable camera, anti-aliasing, sharpness, foveated rendering, eye timing warp, flat screen size (how big the flat screen looks in the headset, -5 to +5)
-- **Flat view** on / off: the whole game screen in front of you
+- **Video**: frame rate, performance display, stable camera, anti-aliasing (not shown with DLSS or FSR), sharpness, foveated rendering, frame generation (at half rate only), **Flat view** on / off (the whole game screen in front of you; moved here from the main page in 1.5), flat screen size (how big the flat screen looks in the headset, -5 to +5)
+- **Exposure (saved per car)**: left / right make the picture darker or brighter in quarter stops (-3 to +3), for the car you are in. Each car remembers its own (`[car_exposure]` in the ini). Shows *no car yet* until the game has said which car it is.
 
 Up / down choose a row, left / right change it, Enter selects, Back goes back a page or closes the menu. Notifications such as the frame rate still show, just above the menu.
 

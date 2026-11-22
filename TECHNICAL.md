@@ -2,27 +2,20 @@
 
 This page covers the deeper options. Most people never need to touch these.
 
-## Eye timing warp
+## Half rate and frame generation
 
-The two eyes are drawn on alternating game frames, so the left eye’s picture is one frame older than the right. At speed this can make roadside objects look nearer or smaller than they are.  
-The warp moves the left picture forward to the right eye’s moment using the scene depth so both eyes match.  
-On by default. Needs an upscaler. Costs a little GPU. Turn it off if you don’t notice the problem and want higher performance.
+**Half rate** (Picture tab, `half_rate=1`): the game renders each eye every other headset frame, which gives about twice the GPU headroom. Use it when the PC cannot hold the headset's full rate.
 
-- At 200 km/h the car moves about 40 cm in that one frame. The road beside the car can seem to rise toward the windows. Some people notice it straight away. Others never do.
-- Switch it in the headset menu (**Video → Eye timing warp**) or with the checkbox in GrayHorizon Settings.
-- It uses the depth an upscaler is given (DLSS or FSR). Without an upscaler it does nothing.
-- Since 1.3.0 it also works with plain views (SteamVR and Meta Link, see below): the left picture is warped first, then redrawn into the runtime's view. It is not used when running at half frame rate.
-- Where something close (a window pillar, another car) uncovers scenery that was hidden a frame earlier, that spot is filled from the background next to it. At very high speed you may see a slight smear along those edges.
+**Frame generation** (ticked by default, only used at half rate): The mod moves the last rendered image forward using the scene depth.  This helps it still looks close to full rate, on any graphics card. Name tags and markers are moved with the car they belong to. Thin objects (power lines) and some lighting can flicker slightly. Unticked, each eye shows its last picture again, which judders.
 
-## Per-eye rendering
+Switch frame generation in the headset menu (**Video → Frame generation**, shown at half rate only) or in GrayHorizon Settings.
 
-Each eye gets its own picture, turned outward to match its lens (canted). All game effects work, and it needs the fewest pixels for the same sharpness.
-Since 1.3.0 this is the only mode: the off-center and "one wide view for both eyes" modes are retired. An older ini with one of them is switched to canted by itself at the next start, so the trim works for everyone.
-
-## Picture trim (canted mode)
+## Picture trim
 
 Start at 0 and raise until you can just see the black edge when looking up or down, then back off one step.  
-The Crystal Super modules ship with 25/30 (Ultrawide) and 25/20 (Micro-OLED).
+For example, the author uses 26/29 on a Pimax Crystal Super Ultrawide and 25/20 on the Micro-OLED module.
+
+**Inner / outer** (since 1.5): the same for the sides of each eye's picture: inner is the nose side, outer the temple side. Set them on the Picture tab under the top / bottom boxes, or `trim_inner` / `trim_outer` in the ini. Raise them until you can just see the black edge at the side, then back off one step. On a Crystal Super Ultrawide, 15 inner / 20 outer worked well in testing. The **renders at** readout shows the size that is left.
 
 ## SteamVR
 

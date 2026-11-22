@@ -18,12 +18,11 @@ The mod also writes `gh3vr_stats.txt` / `gh4vr_stats.txt` / `gh5vr_stats.txt` / 
 ## Quick ways to gain performance
 
 1. Turn the game’s MSAA off and use DLSS if you have an NVIDIA RTX card.  
-2. Picture trim (canted mode): Raise Trim top/bottom percentage until you can just see the black edge when looking up/down, then back off a step. This can save a lot of pixels.  
+2. Picture trim (canted mode): Raise Trim top/bottom percentage until you can just see the black edge when looking up/down, then back off a step. Do the same with Trim inner/outer for the sides. This can save a lot of pixels.  
 3. Enable foveated rendering.
-4. Turn off eye timing warp if you don’t notice the depth issue it fixes. It costs a little GPU time.  
-5. Drop to a low graphics preset, then raise settings until you hit the limit. Keep environment detail as high as you can to reduce pop-in.  
-6. Run [learning mode](SETTINGS.md#learning-mode) to find the size that suits your PC.
-7. Enabling half-rate draws a new image every other headset frame.  It is not as smooth, and a last resort when the PC cannot hold twice the headset rate. Eye timing warp stays off while it is on.
+4. Drop to a low graphics preset, then raise settings until you hit the limit. Keep environment detail as high as you can to reduce pop-in.  
+5. Run [learning mode](SETTINGS.md#learning-mode) to find the size that suits your PC.
+6. Half rate draws a new image for each eye every other headset frame, about twice the GPU headroom. With frame generation (on by default) the frames in between are made from depth, so it still looks close to full rate. See [Half rate and frame generation](TECHNICAL.md#half-rate-and-frame-generation).
 
 ## Example baseline (high-end)
 
@@ -74,4 +73,4 @@ Game settings that went with those numbers. Everything in the [required video se
 
 Graphics were kept high, with the ray-traced effects mostly off, as in the tables. These are a starting point, not a requirement.
 
-See [SETTINGS.md](SETTINGS.md) for the config file options, including detail_fov, and [TECHNICAL.md](TECHNICAL.md) for eye timing warp, canted rendering and trim.
+See [SETTINGS.md](SETTINGS.md) for the config file options, including detail_fov, and [TECHNICAL.md](TECHNICAL.md) for half rate, frame generation and trim.

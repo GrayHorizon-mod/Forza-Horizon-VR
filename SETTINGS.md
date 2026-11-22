@@ -7,13 +7,14 @@ The live panel at the top shows the frame rate, GPU and CPU load while the game 
 
 The settings are on four tabs (five in FH3). Changes apply the next time the game starts.
 
-- **Picture**: the headset profile, [learning mode](#learning-mode), **Size per eye** (35% to 150% of the headset's full size, with marks at the common sizes; since 1.3.0, 100% is the headset's true full sharpness, so on headsets with uneven lens angles like the Pimax Crystal Super the slider reads lower than before), anti-aliasing (DLSS, FSR, TAA or none), render scale, foveated rendering, trim, and **Frame timing**: *Eye timing warp* and *Run at half frame rate*.
+- **Picture**: the headset profile, [learning mode](#learning-mode), **Size per eye** (35% to 150% of the headset's full size, with marks at the common sizes; since 1.3.0, 100% is the headset's true full sharpness, so on headsets with uneven lens angles like the Pimax Crystal Super the slider reads lower than before), anti-aliasing (DLSS, FSR, TAA or none), render scale, foveated rendering, trim (top / bottom, and since 1.5 inner / outer, see [Picture trim](TECHNICAL.md#picture-trim)), and **Frame rate**: *Half rate* and *Frame generation* (see [Half rate and frame generation](TECHNICAL.md#half-rate-and-frame-generation)).
 - **Options**:
   - **Enable GrayHorizon** unticked: the game plays on the monitor as normal (no VR, no hotkeys, no status window).  At the next start the resolution goes back to your in-game setting before using this mod.
   - **VR enabled on startup** unticked (`auto_start=0`): VR comes on only when you press F8.
   - **VR runtime** (`runtime=`): which OpenXR runtime this game uses: the system default, or one of the runtimes installed on your PC, for example SteamVR or Pimax OpenXR. Each game remembers its own. FH3 always uses SteamVR.
   - **Allow OpenXR Toolkit** (`openxr_toolkit`, ticked by default): OpenXR Toolkit is used when it is installed. Untick it to keep the Toolkit out of this game.
   - **Screenshots of both eyes, side by side** (`screenshot_sbs`).
+  - **Multi-threaded frame handling** (`end_thread`, ticked by default): saves the game's render thread a little time each frame. Ticked means automatic: it is not used on SteamVR (where it slows frames down). Untick it if frames stutter or the picture misbehaves. Not in FH3, which always runs on SteamVR.
   - Also: stable camera, opening this window when the game starts, safe mode, and looking for updates.
   - **Reset to defaults**: puts the ticked parts back to how a new install has them: settings and hotkeys, seat positions, HUD layouts, and (not ticked unless you tick it) the learned picture size, which makes learning mode start over. Close the game first. Your current files are copied into a `GrayHorizon backup <date> <time>` folder next to them, so nothing is lost.
 - **Menu**: the keys and buttons for the [in-headset menu](HUD-AND-SEAT.md#in-headset-menu-summary).
@@ -96,5 +97,9 @@ Setting the menu up on a wheel’s D-pad is in [HUD-AND-SEAT.md](HUD-AND-SEAT.md
 | `start_early` | FH5 / FH6: `1` (default) = VR from the loading screen, before the title screen. `0` = when the world has loaded. |
 | `eye_tag_guard` | `1` (default) = the game's own render queue tells the mod which frame it is drawing, and left and right images are kept in order from that. It corrects a slip within a few frames, after menus and rewinds too. `0` = only the older check of the frame queue's depth. Leave it on. |
 | `flat_zoom` | The flat screen's size in the headset (menus, the map, the hood and bumper views): `-5` to `5`, about 10% a step. `0` (default) = 3 m wide. Also in the in-headset menu: Video → Flat screen size. |
-| `snow_fix` | FH3 / FH4, canted mode: `1` (default) stops snow and rain being drawn as long sideways streaks. `2` = a simpler variant, `0` = off. Can be changed while the game runs. |
+| `snow_fix` | FH3 / FH4 / FH6, canted mode: `1` (default) stops snow and rain being drawn as long sideways streaks. `2` = a simpler variant, `0` = off. Can be changed while the game runs. |
 | `runtime` | The OpenXR runtime for this game: empty (default) = the system default, or a name such as `SteamVR` or `Pimax OpenXR`, matched against the installed runtimes. Also in GrayHorizon Settings → Options → VR runtime. FH3 ignores it and always uses SteamVR. |
+| `half_rate` | `1` = the game renders each eye every other headset frame, about twice the GPU headroom. `0` (default) = full rate. Also on the Picture tab. |
+| `frame_gen` | With `half_rate=1`: `1` (default) = frame generation makes the frames in between, `0` = each eye shows its last picture again. Also in the headset menu (Video → Frame generation, at half rate only). |
+| `trim_inner` / `trim_outer` | Canted mode: percent of each eye's picture width not drawn on the nose side / the temple side, `0` (default) to `40`. Saved per headset (in its `[headset_...]` section) by GrayHorizon Settings. See [Picture trim](TECHNICAL.md#picture-trim). |
+| `wait_thread` | `1` (default) = the mod waits for the headset's next frame on a thread of its own, one frame ahead, so a game frame that finishes just after the headset's slot still makes it instead of waiting a whole frame. `0` =  on the game's render thread. Read at game start. |
