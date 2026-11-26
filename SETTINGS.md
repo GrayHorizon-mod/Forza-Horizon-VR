@@ -91,13 +91,19 @@ Setting the menu up on a wheel’s D-pad is in [HUD-AND-SEAT.md](HUD-AND-SEAT.md
 | `hud_panels` | `0` (default) = HUD elements in the cockpit. `3` = the game’s flat HUD. |
 | `hud_layer` | With an upscaler: `1` draws the HUD in its own layer at the full headset size, so dials and text stay sharp. |
 | `tag_layer` | With an upscaler: `1` (default) draws name tags and checkpoint markers in their own layer, so the upscaler does not blur them. `0` = the older method. Can be changed while the game runs. |
-| `other_cars` | With an upscaler: `1` (default) gives other cars their own motion, so they stay as sharp as the scenery while they move. `0` = off. Can be changed while the game runs. |
+| `other_cars` | With an upscaler, TAA or frame generation: `1` (default) gives other cars their own motion, so they stay as sharp as the scenery while they move. `0` = off. Can be changed while the game runs. |
+| `other_cars_size` | With `other_cars=1`: `1` (default) measures buses, trucks and vans from the depth picture, so the whole vehicle moves as one. `0` = every car gets the same car-sized area. Can be changed while the game runs. |
 | `ui_scene` | FH4: `1` (default) = 3D only while the driving screen is up. Menus that keep the cockpit camera running behind them (car selection, blueprints, the map) are shown flat. `0` = the cockpit camera alone decides. FH5 and FH6 always work this way. |
 | `no_wheel_view` | `flat` (default) = the cockpit view without the steering wheel goes to the flat screen, like the hood and bumper views. `3d` = keep it in VR. |
+| `chase_view` | `3d` (default since 1.6) = the game's chase cameras in 3D in the headset, moving the way the game moves them. `flat` = chase views go to the flat screen, as before 1.6. **Flat view** in the headset menu shows them flat too. Read at game start. |
+| `chase_shadow_apron` | Chase view: `1` (default) = the road right around the car moves with the car in the eye timing warp and frame generation, so the car's shadow stays under it. `0` = off. Read at game start. |
+| `chase_apron_scale` | Chase view: the size of that road area, `0.5` to `3`, default `1` (2 m beside the car, 4.1 m in front and behind). Bigger helps long shadows when the sun is low; smaller keeps nearby pebbles and tree shadows still. Read at game start. |
+| `chase_floor_margin` | Chase view: how far above the measured road the car's own area starts, in metres, `-0.3` to `0.3`, default `0.03`. Read at game start. |
 | `start_early` | FH5 / FH6: `1` (default) = VR from the loading screen, before the title screen. `0` = when the world has loaded. |
 | `eye_tag_guard` | `1` (default) = the game's own render queue tells the mod which frame it is drawing, and left and right images are kept in order from that. It corrects a slip within a few frames, after menus and rewinds too. `0` = only the older check of the frame queue's depth. Leave it on. |
 | `flat_zoom` | The flat screen's size in the headset (menus, the map, the hood and bumper views): `-5` to `5`, about 10% a step. `0` (default) = 3 m wide. Also in the in-headset menu: Video → Flat screen size. |
 | `snow_fix` | FH3 / FH4 / FH6, canted mode: `1` (default) stops snow and rain being drawn as long sideways streaks. `2` = a simpler variant, `0` = off. Can be changed while the game runs. |
+| `expo_pass_patch` | FH3 / FH4: `1` (default) stops single frames in one eye flashing white or going dark (the game's own exposure showing through for a frame). `0` = off. Read at game start. |
 | `runtime` | The OpenXR runtime for this game: empty (default) = the system default, or a name such as `SteamVR` or `Pimax OpenXR`, matched against the installed runtimes. Also in GrayHorizon Settings → Options → VR runtime. FH3 ignores it and always uses SteamVR. |
 | `half_rate` | `1` = the game renders each eye every other headset frame, about twice the GPU headroom. `0` (default) = full rate. Also on the Picture tab. |
 | `frame_gen` | With `half_rate=1`: `1` (default) = frame generation makes the frames in between, `0` = each eye shows its last picture again. Also in the headset menu (Video → Frame generation, at half rate only). |

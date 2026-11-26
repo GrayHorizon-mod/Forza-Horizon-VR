@@ -66,6 +66,10 @@ Delete a car’s section to put it back on the default. To start over with the b
 
 The seat rows in the headset menu, or the seat hotkeys (Ctrl+Up / Ctrl+Down, Ctrl+PgUp / Ctrl+PgDn), move your eye point 1 cm at a time. Hold to repeat. The position is saved for the car you are in, under `[seats]` in the ini. Other cars use the default: 13 cm forward of the game’s own cockpit camera, in every game. Delete a car’s line to put it back.
 
+## Chase view
+
+Since 1.6 the game's chase cameras are in 3D in the headset too, and the camera moves the way the game moves it (it trails the car and swings round in turns). You can orbit around the car with the mouse. The car is measured from the depth picture, so a truck or bus you drive is treated as the whole vehicle, and the road around the car is found each frame to keep the car's shadow under it. **Flat view** (Video page of the menu) shows chase views on the flat screen instead, and `chase_view=flat` in the ini makes that the default. See [SETTINGS.md](SETTINGS.md) for the chase keys.
+
 ## In-headset menu summary
 
 Press **F12** (or the button you give it). The menu opens in the lower part of the view, so the windshield stays in sight. Every row shows what it is set to now.

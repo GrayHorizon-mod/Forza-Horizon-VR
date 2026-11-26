@@ -56,6 +56,7 @@ A game update can potentially break the hooks.  FH6 has been built to generally 
 ## Features
 
 - Stereo 3D cockpit with head tracking
+- Chase cameras in 3D too (since 1.6), with the game's own camera movement
 - Built in frame generation when running at half frame rate.
 - Stable cockpit camera (removes game head-bob / g-force lean) - great for motion simulators
 - Learning mode: finds the best picture and scaling size for your PC, usually in less than 10 minutes
