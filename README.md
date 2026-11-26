@@ -3,7 +3,7 @@
 Not affiliated with Playground / Turn 10 / Xbox / Microsoft.  Use at your own risk.
 
 Four separate injectors (one per game) that share the same design and the same settings program.  
-Each gives a stereo 3D cockpit view with full head tracking through OpenXR.
+Each gives a stereo 3D cockpit view and 3D chase cams with full head tracking through OpenXR.
 
 GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https://www.ko-fi.com/GrayHorizon), but you are under no obligation to do so.
 
@@ -55,9 +55,8 @@ A game update can potentially break the hooks.  FH6 has been built to generally 
 
 ## Features
 
-- Stereo 3D cockpit with head tracking
-- Chase cameras in 3D too (since 1.6), with the game's own camera movement
-- Built in frame generation when running at half frame rate.
+- Stereo 3D cockpit and 3D chase cams with head tracking
+- Built in frame generation when running at half frame rate
 - Stable cockpit camera (removes game head-bob / g-force lean) - great for motion simulators
 - Learning mode: finds the best picture and scaling size for your PC, usually in less than 10 minutes
 - HUD broken into floating panels you can place per car (minimap, speedometer, race info, etc.)
@@ -66,6 +65,7 @@ A game update can potentially break the hooks.  FH6 has been built to generally 
 - Supports DLSS (NVIDIA RTX) or FSR (any graphics card), or the mod’s own TAA
 - In-headset menu (F12, or use wheel/controller) allows control of everything without removing your headset
 - The mod can be fully disabled while staying installed by an option in the settings program
+- OpenXR tooolkit is supported (ReShade support coming soon)
 - Motion compensation via OpenXR is supported
 - When using FH3, full data out support is included, same format as FH4/5/6.  Great for motion rigs, dashboards, etc. 
 
