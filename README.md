@@ -3,7 +3,7 @@
 Not affiliated with Playground / Turn 10 / Xbox / Microsoft.  Use at your own risk.
 
 Four separate injectors (one per game) that share the same design and the same settings program.  
-Each gives a stereo 3D cockpit view and 3D chase cams with full head tracking through OpenXR.
+Each gives a 3D cockpit view and 3D chase cams with full head tracking through OpenXR.
 
 GrayHorizon is free.  If it provides enjoyment for you, [tips are welcome](https://www.ko-fi.com/GrayHorizon), but you are under no obligation to do so.
 
@@ -55,7 +55,8 @@ A game update can potentially break the hooks.  FH6 has been built to generally 
 
 ## Features
 
-- Stereo 3D cockpit and 3D chase cams with head tracking
+- 3D cockpit with head tracking
+- 3D chase cameras with 360 degree support (use right mouse button, then drag left or right)
 - Built in frame generation when running at half frame rate
 - Stable cockpit camera (removes game head-bob / g-force lean) - great for motion simulators
 - Learning mode: finds the best picture and scaling size for your PC, usually in less than 10 minutes
